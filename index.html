@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111113">
+
+    <title>Fredy Aguilar | Digital Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:wght@400;500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PROJECT LOGO GALLERY: playful comic-book frames -->
+    <style>
+        .project-illustration.project-logo-frame {
+            position: relative;
+            isolation: isolate;
+            min-height: 235px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 13px;
+            padding: 26px 24px 20px;
+            border: 5px solid #171717;
+            border-radius: 28px 18px 30px 20px;
+            box-shadow: 7px 7px 0 #171717;
+            overflow: hidden;
+            transform: rotate(-0.7deg);
+            background-color: #fff8dc;
+            background-image: radial-gradient(#171717 1.35px, transparent 1.5px);
+            background-size: 13px 13px;
+        }
+
+        .project-illustration.project-logo-frame::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 13px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 3px solid #171717;
+            border-radius: 20px 13px 22px 15px;
+            box-shadow: 3px 3px 0 rgba(23, 23, 23, 0.22);
+            transform: rotate(1deg);
+        }
+
+        .project-illustration.project-logo-frame::after {
+            content: "✦";
+            position: absolute;
+            top: 8px;
+            right: 13px;
+            color: #171717;
+            font-family: "Bungee", sans-serif;
+            font-size: 30px;
+            line-height: 1;
+            text-shadow: 2px 2px 0 #fff;
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .project-logo-frame .project-logo {
+            position: relative;
+            z-index: 1;
+            display: block;
+            width: min(100%, 205px);
+            height: 155px;
+            object-fit: contain;
+            padding: 10px;
+            background: #fff;
+            border: 3px solid #171717;
+            border-radius: 17px 12px 18px 11px;
+            box-shadow: 4px 4px 0 #171717;
+            transform: rotate(1deg);
+        }
+
+        .project-logo-frame .art-label {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            max-width: 90%;
+            margin: 0;
+            padding: 5px 12px;
+            color: #171717;
+            background: #fff;
+            border: 2.5px solid #171717;
+            border-radius: 9px 6px 10px 7px;
+            box-shadow: 2px 2px 0 #171717;
+            text-align: center;
+            font-family: "Bungee", sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            transform: rotate(-1deg);
+        }
+
+        .project-illustration.vox-art {
+            background-color: #b8f1ff;
+            transform: rotate(-0.8deg);
+        }
+        .project-illustration.vox-art::after { color: #087eaa; }
+
+        .project-illustration.scholar-art {
+            background-color: #ffe39a;
+            transform: rotate(0.6deg);
+        }
+        .project-illustration.scholar-art::after {
+            content: "★";
+            color: #e49b00;
+            font-size: 32px;
+        }
+        .project-logo-frame.scholar-art .project-logo {
+            width: min(100%, 275px);
+            height: 185px;
+            padding: 8px;
+            border-width: 4px;
+            box-shadow: 5px 5px 0 #171717;
+            transform: rotate(-0.5deg);
+        }
+
+        .project-illustration.parking-art {
+            background-color: #c9f5c6;
+            transform: rotate(-0.4deg);
+        }
+        .project-illustration.parking-art::after { color: #278b35; }
+
+        /* PROFILE PHOTO: comic-book portrait frame */
+        .hero-art .profile-photo-frame {
+            position: relative;
+            z-index: 2;
+            width: min(78%, 330px);
+            min-height: 360px;
+            margin: 12px auto 18px;
+            padding: 13px;
+            background: #fffdf5;
+            border: 5px solid #171717;
+            border-radius: 34px 22px 38px 20px;
+            box-shadow: 10px 10px 0 #171717, 15px 15px 0 #f6c84b;
+            transform: rotate(2deg);
+        }
+
+        .hero-art .profile-photo-frame::before {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 2px dashed #171717;
+            border-radius: 24px 15px 28px 14px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hero-art .profile-photo-frame::after {
+            content: "✦";
+            position: absolute;
+            z-index: 3;
+            top: -22px;
+            right: -19px;
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            color: #171717;
+            background: #ffdc55;
+            border: 4px solid #171717;
+            border-radius: 50%;
+            box-shadow: 3px 3px 0 #171717;
+            font-size: 31px;
+            transform: rotate(12deg);
+        }
+
+        .hero-art .profile-photo {
+            display: block;
+            width: 100%;
+            height: 315px;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid #171717;
+            border-radius: 23px 14px 25px 13px;
+            background: #dff5ff;
+        }
+
+        .hero-art .profile-photo-caption {
+            position: relative;
+            z-index: 3;
+            width: fit-content;
+            max-width: 90%;
+            margin: 12px auto 0;
+            padding: 7px 15px;
+            color: #171717;
+            background: #ffdc55;
+            border: 3px solid #171717;
+            border-radius: 8px 5px 10px 6px;
+            box-shadow: 3px 3px 0 #171717;
+            font-family: "Bungee", sans-serif;
+            font-size: 11px;
+            text-align: center;
+            transform: rotate(-2deg);
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            color: #171717;
+            background: #fffdf5;
+            border: 3px solid #171717;
+            border-radius: 10px 7px 12px 8px;
+            box-shadow: 3px 3px 0 #171717;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .social-links a:hover {
+            transform: translate(-2px, -2px) rotate(-1deg);
+            box-shadow: 5px 5px 0 #171717;
+        }
+
+        @media (max-width: 600px) {
+            .hero-art .profile-photo-frame {
+                width: min(82%, 285px);
+                min-height: 305px;
+                padding: 10px;
+                box-shadow: 7px 7px 0 #171717, 11px 11px 0 #f6c84b;
+            }
+            .hero-art .profile-photo { height: 260px; }
+            .hero-art .profile-photo-caption { font-size: 9px; }
+        }
+
+        /* HERO STICKERS: keep the two comic labels comfortably separated */
+        .hero-art {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            padding: 38px 16px 34px;
+        }
+
+        .hero-art .hero-sticker {
+            position: relative;
+            inset: auto;
+            display: inline-block;
+            z-index: 4;
+            margin: 0;
+            flex: 0 0 auto;
+        }
+
+        .hero-art .sticker-top {
+            align-self: flex-start;
+            margin-left: 4%;
+            transform: rotate(-4deg);
+        }
+
+        .hero-art .sticker-bottom {
+            align-self: flex-end;
+            margin-right: 2%;
+            transform: rotate(3deg);
+        }
+
+        .hero-art .profile-photo-frame {
+            margin: 0 auto;
+            flex: 0 0 auto;
+        }
+
+        @media (max-width: 600px) {
+            .hero-art {
+                gap: 19px;
+                padding: 32px 12px 28px;
+            }
+            .hero-art .sticker-top { margin-left: 1%; }
+            .hero-art .sticker-bottom { margin-right: 0; }
+            .project-illustration.project-logo-frame {
+                min-height: 205px;
+                padding: 22px 16px 17px;
+                border-width: 4px;
+                box-shadow: 5px 5px 0 #171717;
+            }
+            .project-logo-frame .project-logo {
+                height: 135px;
+                width: min(100%, 190px);
+            }
+            .project-logo-frame.scholar-art .project-logo {
+                height: 160px;
+                width: min(100%, 240px);
+            }
+            .project-logo-frame .art-label { font-size: 9px; }
+        }
+
+
+        /* SKILLS: organized category cards, matching the portfolio style */
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            align-items: stretch;
+        }
+        .skills-category {
+            position: relative;
+            padding: 22px;
+            background: #fffdf5;
+            color: #171717;
+            border: 3px solid #171717;
+            border-radius: 22px 15px 24px 16px;
+            box-shadow: 6px 6px 0 #171717;
+            overflow: hidden;
+        }
+        .skills-category:first-child { grid-column: 1 / -1; }
+        .skills-category::after {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1.5px dashed rgba(23,23,23,.24);
+            border-radius: 15px 10px 17px 11px;
+            pointer-events: none;
+        }
+        .skills-category-heading {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 18px;
+        }
+        .skills-category-icon {
+            display: grid;
+            place-items: center;
+            flex: 0 0 43px;
+            width: 43px;
+            height: 43px;
+            color: #171717;
+            background: #ffdc55;
+            border: 2.5px solid #171717;
+            border-radius: 13px 9px 14px 8px;
+            box-shadow: 3px 3px 0 #171717;
+            font-family: "Bungee", sans-serif;
+            font-size: 19px;
+        }
+        .languages-category .skills-category-icon { background: #b8eaff; }
+        .soft-category .skills-category-icon { background: #c9f5c6; }
+        .skills-category-kicker {
+            display: block;
+            margin-bottom: 3px;
+            font-family: "Bungee", sans-serif;
+            font-size: 9px;
+            letter-spacing: .7px;
+            color: #666;
+        }
+        .skills-category-heading h3 {
+            margin: 0;
+            font-family: "Bungee", sans-serif;
+            font-size: 17px;
+            line-height: 1.25;
+        }
+        .skills-pills {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+        .skills-pills span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 11px;
+            background: #fff;
+            border: 2px solid #171717;
+            border-radius: 10px 7px 11px 8px;
+            box-shadow: 2px 2px 0 #171717;
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .skills-pills small {
+            padding-left: 6px;
+            border-left: 1px solid #aaa;
+            color: #666;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        @media (max-width: 700px) {
+            .skills-categories { grid-template-columns: 1fr; }
+            .skills-category:first-child { grid-column: auto; }
+            .skills-category { padding: 19px 16px; }
+            .skills-pills { gap: 8px; }
+            .skills-pills span { font-size: 11px; padding: 7px 9px; }
+        }
+/* SKILLS: organized category cards */
+.skills-categories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.skills-category {
+    position: relative;
+    padding: 22px;
+    background: #fffaf0;
+    color: #171717;
+    border: 3px solid #171717;
+    border-radius: 22px 15px 24px 16px;
+    box-shadow: 6px 6px 0 #171717;
+    overflow: hidden;
+}
+
+.skills-category:first-child {
+    grid-column: 1 / -1;
+}
+
+.skills-category::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1.5px dashed rgba(23,23,23,.24);
+    border-radius: 15px 10px 17px 11px;
+    pointer-events: none;
+}
+
+.skills-category-heading {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+}
+
+.skills-category-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 43px;
+    width: 43px;
+    height: 43px;
+    color: #171717;
+    background: #f6c84b;
+    border: 2.5px solid #171717;
+    border-radius: 13px 9px 14px 8px;
+    box-shadow: 3px 3px 0 #171717;
+    font-family: "Bungee", sans-serif;
+    font-size: 19px;
+}
+
+.skills-category-kicker {
+    display: block;
+    margin-bottom: 3px;
+    font-family: "Bungee", sans-serif;
+    font-size: 9px;
+    letter-spacing: .7px;
+    color: #666;
+}
+
+.skills-category-heading h3 {
+    margin: 0;
+    font-family: "Bungee", sans-serif;
+    font-size: 17px;
+    line-height: 1.25;
+}
+
+.skills-pills {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.skills-pills span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 11px;
+    background: #fffdf7;
+    border: 2px solid #171717;
+    border-radius: 10px 7px 11px 8px;
+    box-shadow: 2px 2px 0 #171717;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.skills-pills small {
+    padding-left: 6px;
+    border-left: 1px solid #aaa;
+    color: #666;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+    .skills-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-category:first-child {
+        grid-column: auto;
+    }
+
+    .skills-category {
+        padding: 19px 16px;
+    }
+
+    .skills-pills {
+        gap: 8px;
+    }
+
+    .skills-pills span {
+        font-size: 11px;
+        padding: 7px 9px;
+    }
+}
+    
+
+/* Center ONLY the Parking-SV card; leave VoxVision and ScholarNet unchanged */
+.project-grid > .parking-centered {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 24px) / 2);
+}
+
+@media (max-width: 700px) {
+    .project-grid > .parking-centered {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+    <!-- CUSTOM CARTOON CURSOR -->
+    <div class="cartoon-cursor" id="cartoonCursor">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M21 29V11C21 6 29 6 29 11V26V8C29 3 37 3 37 8V26V12C37 7 45 7 45 12V29V20C45 15 53 15 53 20V39C53 52 44 60 32 60H28C20 60 16 54 12 48L5 38C2 33 8 28 12 32L21 42Z"
+                fill="#fff" stroke="#111" stroke-width="3.5"
+                stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <!-- INTRO SCREEN -->
+    <div class="intro-screen" id="introScreen">
+
+        <div class="intro-content">
+
+            <p class="intro-label">A NEW ADVENTURE AWAITS</p>
+
+            <div class="intro-decoration">
+                <span class="star">✦</span>
+                <span class="intro-line"></span>
+                <span class="star">✦</span>
+            </div>
+
+            <h1 class="intro-title">
+                THE PORTFOLIO<br>
+                <span>ADVENTURE</span>
+            </h1>
+
+            <p class="intro-subtitle">
+                A little world of ideas, creativity, and code.
+            </p>
+
+            <div class="intro-character">
+                <div class="character-head">
+                    <div class="character-eye left-eye"></div>
+                    <div class="character-eye right-eye"></div>
+                    <div class="character-smile"></div>
+                </div>
+                <div class="character-body"></div>
+            </div>
+
+            <button class="start-button" id="startButton" type="button">
+                <span>➜</span> ENTER PORTFOLIO
+            </button>
+
+            <p class="intro-footer">
+                YOUR JOURNEY STARTS HERE
+            </p>
+
+        </div>
+
+        <div class="intro-bottom">
+            <span>PLAYER 01</span>
+            <span>READY TO EXPLORE?</span>
+        </div>
+
+    </div>
+
+    <!-- MAIN PORTFOLIO -->
+    <main id="portfolio" class="portfolio hidden">
+
+        <!-- NAVIGATION -->
+        <nav class="navbar">
+            <a href="#inicio" class="logo">FA<span>.</span></a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#inicio">Home</a>
+                <a href="#sobre-mi">About</a>
+                <a href="#proyectos">Projects</a>
+                <a href="#habilidades">Skills</a>
+                <a href="#logros">Experience</a>
+                <a href="#contacto" class="nav-contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero section" id="inicio">
+
+            <div class="hero-text reveal">
+                <p class="eyebrow">HELLO, WORLD! I'M</p>
+
+                <h1>
+                    FREDY<br>
+                    <span>AGUILAR</span>
+                </h1>
+
+                <h2>Student · Aspiring Software Engineer</h2>
+
+                <p class="hero-description">
+                    I am a high school student passionate about technology,
+                    programming, and creating digital solutions that can
+                    make a difference.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="button primary-button">
+                        Explore my work ↗
+                    </a>
+
+                    <a href="#contacto" class="button secondary-button">
+                        Get in touch
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-art reveal">
+                <div class="hero-circle"></div>
+
+                <div class="hero-sticker sticker-top">CREATIVE MIND!</div>
+
+                <div class="profile-photo-frame">
+                    <!-- Add your portrait as images/fredy-profile.jpg -->
+                    <img
+                        class="profile-photo"
+                        src="fredy-profile.png"
+                        alt="Portrait of Fredy Aguilar"
+                    >
+                    <p class="profile-photo-caption">THE PERSON BEHIND THE CODE</p>
+                </div>
+
+                <div class="hero-sticker sticker-bottom">
+                    LET'S BUILD SOMETHING!
+                </div>
+            </div>
+
+            <div class="hero-bottom">
+                <span>SCROLL TO EXPLORE</span>
+                <span>↓</span>
+            </div>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about section" id="sobre-mi">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">THE PERSON BEHIND THE SCREEN</p>
+                <h2>ABOUT <span>ME</span></h2>
+            </div>
+
+            <div class="about-layout">
+
+                <div class="about-card about-main reveal">
+                    <span class="card-number">01 / MY STORY</span>
+
+                    <h3>A curious mind with big ideas.</h3>
+
+                    <p>
+                        My name is Fredy Samuel Aguilar Ayala. I am a
+                        17-year-old high school student from El Salvador,
+                        currently studying General High School and
+                        participating in the ¡Supérate! ADOC program.
+                    </p>
+
+                    <p>
+                        My interest in technology started with curiosity.
+                        I wanted to understand how applications, websites,
+                        and computer systems work. That curiosity gradually
+                        became a motivation to learn programming and
+                        develop my own projects.
+                    </p>
+
+                    <p>
+                        I want to study Computer Systems Engineering and
+                        continue growing as a person and as a future
+                        professional. I believe technology is more than
+                        writing code: it is a way to turn ideas into
+                        solutions that can help others.
+                    </p>
+                </div>
+
+                <div class="about-side reveal">
+                    <div class="quote-card">
+                        <span class="quote-mark">“</span>
+                        <h3>Think it.<br>Build it.<br>Improve it.</h3>
+                        <p>Every great project begins with an idea.</p>
+                    </div>
+
+                    <div class="about-info">
+                        <p><span>LOCATION</span> El Salvador</p>
+                        <p><span>EDUCATION</span> General High School</p>
+                        <p><span>GOAL</span> Computer Systems Engineering</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects section" id="proyectos">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">SOME THINGS I'VE BEEN WORKING ON</p>
+                <h2>MY <span>PROJECTS</span></h2>
+                <p class="section-description">
+                    Ideas, experiments, and projects built through curiosity
+                    and continuous learning.
+                </p>
+            </div>
+
+            <div class="project-grid">
+
+                <!-- PROJECT 01: VOXVISION -->
+                <article class="project-card project-featured reveal">
+
+                    <div class="project-top">
+                        <span>01 — SOCIAL IMPACT</span>
+                        <span class="project-symbol">◉</span>
+                    </div>
+
+                    <div class="project-illustration project-logo-frame vox-art">
+                        <!-- Upload the VoxVision logo to images/logos/voxvision-logo.png -->
+                        <img
+                            class="project-logo"
+                            src="voxvision-logo.png"
+                            alt="VoxVision project logo"
+                        >
+                        <span class="art-label">VISION FOR EVERYONE</span>
+                    </div>
+
+                    <div class="project-content">
+                        <h3>VoxVision</h3>
+
+                        <p>
+                            VoxVision is a web-based accessibility project
+                            that uses artificial intelligence to detect
+                            objects. Its object detection model was trained
+                            using Teachable Machine and integrated into the
+                            website to explore how technology can help people
+                            with visual impairments understand their
+                            surroundings.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>Teachable Machine</span>
+                            <span>AI Object Detection</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a
+                                href="https://fredy-8.github.io/VoxVision/"
+                                class="project-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                VIEW WEBSITE ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/Fredy-8/VoxVision"
+                                class="project-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                VIEW REPO ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 02: SCHOLARNET -->
+                <article class="project-card reveal">
+
+                    <div class="project-top">
+                        <span>02 — TEAM PROJECT · EDUCATION</span>
+                        <span class="project-symbol">✦</span>
+                    </div>
+
+                    <div class="project-illustration project-logo-frame scholar-art">
+                        <!-- Upload the ScholarNet logo to images/logos/scholarnet-logo.png -->
+                        <img
+                            class="project-logo"
+                            src="scholarnet-logo.png"
+                            alt="ScholarNet project logo"
+                        >
+                        <span class="art-label">EXPLORE · APPLY · GROW</span>
+                    </div>
+
+                    <div class="project-content">
+                        <h3>ScholarNet</h3>
+
+                        <p>
+                            ScholarNet started as an idea for a mobile
+                            application designed to help young Salvadorans
+                            discover scholarship opportunities and access
+                            educational resources. We initially developed
+                            the mobile app using Python, Kivy, and MySQL.
+                            Later, as a team, we transformed that original
+                            idea into a website using HTML, CSS, and
+                            JavaScript, keeping the same purpose while
+                            making the platform accessible through a browser.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Kivy</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Teamwork</span>
+                        </div>
+
+                        <div class="project-actions">
+
+                            <a
+                                href="https://scholarnet-web.github.io/ScholarnetSV-Web/"
+                                class="project-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                VIEW WEBSITE ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/Scholarnet-Web/ScholarnetSV-Web"
+                                class="project-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                VIEW WEBSITE REPO ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/Fredy-8/Scholarnet"
+                                class="project-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                VIEW MOBILE APP REPO ↗
+                            </a>
+
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 03: PARKING-SV -->
+                <article class="project-card reveal parking-centered">
+
+                    <div class="project-top">
+                        <span>03 — EVERYDAY SOLUTIONS</span>
+                        <span class="project-symbol">⌖</span>
+                    </div>
+
+                    <div class="project-illustration project-logo-frame parking-art">
+                        <!-- Upload the Parking-SV logo to images/logos/parking-sv-logo.png -->
+                        <img
+                            class="project-logo"
+                            src="parkingsv-logo.png"
+                            alt="Parking-SV project logo"
+                        >
+                        <span class="art-label">PARK SMARTER</span>
+                    </div>
+
+                    <div class="project-content">
+                        <h3>Parking-SV</h3>
+
+                        <p>
+                            A digital platform concept that connects
+                            drivers looking for parking spaces with
+                            people who have available parking areas.
+                            The project explores a more accessible way
+                            to find and offer parking spaces.
+                        </p>
+
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Toga</span>
+                            <span>HTML & CSS</span>
+                            <span>Web Development</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a
+                                href="https://parkingsv.vercel.app/"
+                                class="project-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live demo ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/parkingSV26/parkingsv-web"
+                                class="project-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source code ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SCHOLARNET MOBILE APP MODAL -->
+        <dialog class="scholar-modal" id="scholarModal">
+
+            <div class="scholar-modal-content">
+
+                <div class="scholar-modal-header">
+                    <div>
+                        <p class="eyebrow">ORIGINAL MOBILE APPLICATION</p>
+                        <h2>Scholar<span>Net</span></h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="scholar-modal-close"
+                        id="closeScholarModal"
+                        aria-label="Close window"
+                    >
+                        ×
+                    </button>
+                </div>
+
+                <div class="scholar-modal-intro">
+
+                    <img
+                        src="assets/scholarnet/logo.png"
+                        alt="ScholarNet application logo"
+                        class="scholar-modal-logo"
+                    >
+
+                    <div>
+                        <span class="scholar-team-label">
+                            COLLABORATIVE TEAM PROJECT
+                        </span>
+
+                        <p>
+                            ScholarNet was originally developed as a
+                            mobile application using Python and Kivy,
+                            with MySQL integration. The project was
+                            created collaboratively to help young
+                            Salvadorans explore scholarship opportunities.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="scholar-modal-section">
+                    <h3>Inside the mobile application</h3>
+
+                    <p>
+                        The original application includes several
+                        sections designed to help users navigate
+                        scholarship information and educational resources.
+                    </p>
+
+                    <div class="scholar-screen-grid">
+
+                        <div class="scholar-screen-item">
+                            <span>01</span>
+                            <h4>Splash Screen</h4>
+                            <p>Welcome screen and application identity.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>02</span>
+                            <h4>Login</h4>
+                            <p>User sign-in interface.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>03</span>
+                            <h4>Registration</h4>
+                            <p>Account creation interface.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>04</span>
+                            <h4>User Menu</h4>
+                            <p>Main navigation after signing in.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>05</span>
+                            <h4>Scholarship Selection</h4>
+                            <p>Access to scholarship categories.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>06</span>
+                            <h4>National Scholarships</h4>
+                            <p>Information about local opportunities.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>07</span>
+                            <h4>International Scholarships</h4>
+                            <p>Information about opportunities abroad.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>08</span>
+                            <h4>News</h4>
+                            <p>Educational news and scholarship updates.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>09</span>
+                            <h4>Experiences</h4>
+                            <p>Stories and experiences from students.</p>
+                        </div>
+
+                        <div class="scholar-screen-item">
+                            <span>10</span>
+                            <h4>About Us & Contact</h4>
+                            <p>Information about the project and contact section.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="scholar-modal-tech">
+                    <h3>Technologies used</h3>
+
+                    <div class="tech-tags">
+                        <span>Python</span>
+                        <span>Kivy</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+
+                <div class="scholar-modal-footer">
+                    <a
+                        href="https://fredy-8.github.io/Scholarnet-Web/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button primary-button"
+                    >
+                        Explore web version ↗
+                    </a>
+
+                    <button
+                        type="button"
+                        class="button secondary-button"
+                        id="closeScholarModalBottom"
+                    >
+                        Close
+                    </button>
+                </div>
+
+                <p class="scholar-modal-note">
+                    This presentation describes the original mobile
+                    application. Screenshots can be added to this section
+                    to show the actual interface.
+                </p>
+
+            </div>
+        </dialog>
+
+        <!-- SKILLS -->
+<section class="skills section" id="habilidades">
+
+    <div class="section-heading reveal">
+        <p class="eyebrow">TOOLS I AM LEARNING TO MASTER</p>
+        <h2>MY <span>SKILLS</span></h2>
+    </div>
+
+    <div class="skills-layout">
+
+        <div class="skills-intro reveal">
+            <h3>Learning never stops.</h3>
+            <p>
+                I am continuously developing my technical and
+                communication skills through school, personal
+                projects, and new challenges.
+            </p>
+        </div>
+
+        <div class="skills-list reveal skills-categories">
+
+            <!-- TECHNICAL SKILLS -->
+            <div class="skills-category technical-category">
+
+                <div class="skills-category-heading">
+                    <span class="skills-category-icon">⌘</span>
+
+                    <div>
+                        <span class="skills-category-kicker">
+                            01 — TECHNOLOGY
+                        </span>
+                        <h3>Technical Skills</h3>
+                    </div>
+                </div>
+
+                <div class="skills-pills">
+                    <span>Python</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>MySQL</span>
+                    <span>Kivy</span>
+                    <span>Toga</span>
+                    <span>Git &amp; GitHub</span>
+                    <span>Database Management</span>
+                    <span>Responsive Web Design</span>
+                    <span>UI Design</span>
+                </div>
+
+            </div>
+
+            <!-- LANGUAGES -->
+            <div class="skills-category languages-category">
+
+                <div class="skills-category-heading">
+                    <span class="skills-category-icon">文</span>
+
+                    <div>
+                        <span class="skills-category-kicker">
+                            02 — COMMUNICATION
+                        </span>
+                        <h3>Languages</h3>
+                    </div>
+                </div>
+
+                <div class="skills-pills">
+                    <span>Spanish <small>Native</small></span>
+                    <span>English <small>B1–B2</small></span>
+                </div>
+
+            </div>
+
+            <!-- SOFT SKILLS -->
+            <div class="skills-category soft-category">
+
+                <div class="skills-category-heading">
+                    <span class="skills-category-icon">✦</span>
+
+                    <div>
+                        <span class="skills-category-kicker">
+                            03 — PERSONAL GROWTH
+                        </span>
+                        <h3>Soft Skills</h3>
+                    </div>
+                </div>
+
+                <div class="skills-pills">
+                    <span>Problem Solving</span>
+                    <span>Critical Thinking</span>
+                    <span>Teamwork</span>
+                    <span>Communication</span>
+                    <span>Public Speaking</span>
+                    <span>Adaptability</span>
+                    <span>Leadership</span>
+                    <span>Creativity</span>
+                    <span>Continuous Learning</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!-- EXPERIENCE -->
+        <section class="experience section" id="logros">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">MILESTONES ALONG THE WAY</p>
+                <h2>MY <span>JOURNEY</span></h2>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">01</div>
+                    <div class="timeline-content">
+                        <span>EDUCATION</span>
+                        <h3>¡Supérate! ADOC</h3>
+                        <p>
+                            Scholarship student developing skills in
+                            computing, English, and values.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">02</div>
+                    <div class="timeline-content">
+                        <span>ENGLISH</span>
+                        <h3>TOEIC</h3>
+                        <p>
+                            English learning and assessment experience,
+                            with a TOEIC Silver achievement.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">03</div>
+                    <div class="timeline-content">
+                        <span>EXPERIENCE</span>
+                        <h3>Space Camp</h3>
+                        <p>
+                            An educational experience that helped me
+                            explore science, teamwork, and new challenges.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">04</div>
+                    <div class="timeline-content">
+                        <span>PERSONAL GROWTH</span>
+                        <h3>Building My Own Projects</h3>
+                        <p>
+                            Exploring programming and turning ideas into
+                            digital project concepts.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact section" id="contacto">
+
+            <div class="contact-card reveal">
+
+                <p class="eyebrow">THE NEXT CHAPTER STARTS HERE</p>
+
+                <h2>LET'S MAKE<br><span>IDEAS HAPPEN.</span></h2>
+
+                <p>
+                    Have a project, an opportunity, or just want to say hello?
+                    I would be happy to connect.
+                </p>
+
+                <a href="mailto:samuelaguilar1227@gmail.com" class="button primary-button">
+                    Email me ↗
+                </a>
+
+                <div class="social-links">
+                    <a href="https://github.com/Fredy-8" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    <a href="https://www.linkedin.com/in/fredy-aguilar8" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>© <span id="year"></span> Fredy Aguilar. All rights reserved.</p>
+            <p>MADE WITH CURIOSITY & A LITTLE BIT OF MAGIC ✦</p>
+        </footer>
+
+    </main>
+
+    <!-- SCHOLARNET MODAL INTERACTION -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const scholarModal = document.getElementById("scholarModal");
+
+            const openScholarModal =
+                document.getElementById("openScholarModal");
+
+            const closeScholarModal =
+                document.getElementById("closeScholarModal");
+
+            const closeScholarModalBottom =
+                document.getElementById("closeScholarModalBottom");
+
+            if (scholarModal && openScholarModal) {
+
+                openScholarModal.addEventListener("click", () => {
+                    scholarModal.showModal();
+                });
+
+                closeScholarModal.addEventListener("click", () => {
+                    scholarModal.close();
+                });
+
+                closeScholarModalBottom.addEventListener("click", () => {
+                    scholarModal.close();
+                });
+
+                scholarModal.addEventListener("click", (event) => {
+                    if (event.target === scholarModal) {
+                        scholarModal.close();
+                    }
+                });
+
+            }
+
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
