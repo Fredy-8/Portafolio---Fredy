@@ -1,1346 +1,1145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#111113">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111113">
+<title>Fredy Aguilar | Digital Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:wght@400;500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.project-illustration.project-logo-frame {
+position: relative;
+isolation: isolate;
+min-height: 235px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 13px;
+padding: 26px 24px 20px;
+border: 5px solid #171717;
+border-radius: 28px 18px 30px 20px;
+box-shadow: 7px 7px 0 #171717;
+overflow: hidden;
+transform: rotate(-0.7deg);
+background-color: #fff8dc;
+background-image: radial-gradient(#171717 1.35px, transparent 1.5px);
+background-size: 13px 13px;
+}
+.project-illustration.project-logo-frame::before {
+content: "";
+position: absolute;
+z-index: -1;
+inset: 13px;
+background: rgba(255, 255, 255, 0.94);
+border: 3px solid #171717;
+border-radius: 20px 13px 22px 15px;
+box-shadow: 3px 3px 0 rgba(23, 23, 23, 0.22);
+transform: rotate(1deg);
+}
+.project-illustration.project-logo-frame::after {
+content: "✦";
+position: absolute;
+top: 8px;
+right: 13px;
+color: #171717;
+font-family: "Bungee", sans-serif;
+font-size: 30px;
+line-height: 1;
+text-shadow: 2px 2px 0 #fff;
+transform: rotate(12deg);
+pointer-events: none;
+}
+.project-logo-frame .project-logo {
+position: relative;
+z-index: 1;
+display: block;
+width: min(100%, 205px);
+height: 155px;
+object-fit: contain;
+padding: 10px;
+background: #fff;
+border: 3px solid #171717;
+border-radius: 17px 12px 18px 11px;
+box-shadow: 4px 4px 0 #171717;
+transform: rotate(1deg);
+}
+.project-logo-frame .art-label {
+position: relative;
+z-index: 1;
+display: inline-block;
+max-width: 90%;
+margin: 0;
+padding: 5px 12px;
+color: #171717;
+background: #fff;
+border: 2.5px solid #171717;
+border-radius: 9px 6px 10px 7px;
+box-shadow: 2px 2px 0 #171717;
+text-align: center;
+font-family: "Bungee", sans-serif;
+font-size: 10px;
+letter-spacing: 0.5px;
+transform: rotate(-1deg);
+}
+.project-illustration.vox-art {
+background-color: #b8f1ff;
+transform: rotate(-0.8deg);
+}
+.project-illustration.vox-art::after { color: #087eaa; }
+.project-illustration.scholar-art {
+background-color: #ffe39a;
+transform: rotate(0.6deg);
+}
+.project-illustration.scholar-art::after {
+content: "★";
+color: #e49b00;
+font-size: 32px;
+}
+.project-logo-frame.scholar-art .project-logo {
+width: min(100%, 275px);
+height: 185px;
+padding: 8px;
+border-width: 4px;
+box-shadow: 5px 5px 0 #171717;
+transform: rotate(-0.5deg);
+}
+.project-illustration.parking-art {
+background-color: #c9f5c6;
+transform: rotate(-0.4deg);
+}
+.project-illustration.parking-art::after { color: #278b35; }
 
-    <title>Fredy Aguilar | Digital Portfolio</title>
+.hero-art .profile-photo-frame {
+position: relative;
+z-index: 2;
+width: min(78%, 330px);
+min-height: 360px;
+margin: 12px auto 18px;
+padding: 13px;
+background: #fffdf5;
+border: 5px solid #171717;
+border-radius: 34px 22px 38px 20px;
+box-shadow: 10px 10px 0 #171717, 15px 15px 0 #f6c84b;
+transform: rotate(2deg);
+}
+.hero-art .profile-photo-frame::before {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed #171717;
+border-radius: 24px 15px 28px 14px;
+pointer-events: none;
+z-index: 2;
+}
+.hero-art .profile-photo-frame::after {
+content: "✦";
+position: absolute;
+z-index: 3;
+top: -22px;
+right: -19px;
+display: grid;
+place-items: center;
+width: 58px;
+height: 58px;
+color: #171717;
+background: #ffdc55;
+border: 4px solid #171717;
+border-radius: 50%;
+box-shadow: 3px 3px 0 #171717;
+font-size: 31px;
+transform: rotate(12deg);
+}
+.hero-art .profile-photo {
+display: block;
+width: 100%;
+height: 315px;
+object-fit: cover;
+object-position: center;
+border: 3px solid #171717;
+border-radius: 23px 14px 25px 13px;
+background: #dff5ff;
+}
+.hero-art .profile-photo-caption {
+position: relative;
+z-index: 3;
+width: fit-content;
+max-width: 90%;
+margin: 12px auto 0;
+padding: 7px 15px;
+color: #171717;
+background: #ffdc55;
+border: 3px solid #171717;
+border-radius: 8px 5px 10px 6px;
+box-shadow: 3px 3px 0 #171717;
+font-family: "Bungee", sans-serif;
+font-size: 11px;
+text-align: center;
+transform: rotate(-2deg);
+}
+.social-links {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 12px;
+}
+.social-links a {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 10px 16px;
+color: #171717;
+background: #fffdf5;
+border: 3px solid #171717;
+border-radius: 10px 7px 12px 8px;
+box-shadow: 3px 3px 0 #171717;
+font-weight: 800;
+text-decoration: none;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.social-links a:hover {
+transform: translate(-2px, -2px) rotate(-1deg);
+box-shadow: 5px 5px 0 #171717;
+}
+@media (max-width: 600px) {
+.hero-art .profile-photo-frame {
+width: min(82%, 285px);
+min-height: 305px;
+padding: 10px;
+box-shadow: 7px 7px 0 #171717, 11px 11px 0 #f6c84b;
+}
+.hero-art .profile-photo { height: 260px; }
+.hero-art .profile-photo-caption { font-size: 9px; }
+}
+.hero-art {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 25px;
+padding: 38px 16px 34px;
+}
+.hero-art .hero-sticker {
+position: relative;
+inset: auto;
+display: inline-block;
+z-index: 4;
+margin: 0;
+flex: 0 0 auto;
+}
+.hero-art .sticker-top {
+align-self: flex-start;
+margin-left: 4%;
+transform: rotate(-4deg);
+}
+.hero-art .sticker-bottom {
+align-self: flex-end;
+margin-right: 2%;
+transform: rotate(3deg);
+}
+.hero-art .profile-photo-frame {
+margin: 0 auto;
+flex: 0 0 auto;
+}
+@media (max-width: 600px) {
+.hero-art {
+gap: 19px;
+padding: 32px 12px 28px;
+}
+.hero-art .sticker-top { margin-left: 1%; }
+.hero-art .sticker-bottom { margin-right: 0; }
+.project-illustration.project-logo-frame {
+min-height: 205px;
+padding: 22px 16px 17px;
+border-width: 4px;
+box-shadow: 5px 5px 0 #171717;
+}
+.project-logo-frame .project-logo {
+height: 135px;
+width: min(100%, 190px);
+}
+.project-logo-frame.scholar-art .project-logo {
+height: 160px;
+width: min(100%, 240px);
+}
+.project-logo-frame .art-label { font-size: 9px; }
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:wght@400;500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- PROJECT LOGO GALLERY: playful comic-book frames -->
-    <style>
-        .project-illustration.project-logo-frame {
-            position: relative;
-            isolation: isolate;
-            min-height: 235px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 13px;
-            padding: 26px 24px 20px;
-            border: 5px solid #171717;
-            border-radius: 28px 18px 30px 20px;
-            box-shadow: 7px 7px 0 #171717;
-            overflow: hidden;
-            transform: rotate(-0.7deg);
-            background-color: #fff8dc;
-            background-image: radial-gradient(#171717 1.35px, transparent 1.5px);
-            background-size: 13px 13px;
-        }
-
-        .project-illustration.project-logo-frame::before {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            inset: 13px;
-            background: rgba(255, 255, 255, 0.94);
-            border: 3px solid #171717;
-            border-radius: 20px 13px 22px 15px;
-            box-shadow: 3px 3px 0 rgba(23, 23, 23, 0.22);
-            transform: rotate(1deg);
-        }
-
-        .project-illustration.project-logo-frame::after {
-            content: "✦";
-            position: absolute;
-            top: 8px;
-            right: 13px;
-            color: #171717;
-            font-family: "Bungee", sans-serif;
-            font-size: 30px;
-            line-height: 1;
-            text-shadow: 2px 2px 0 #fff;
-            transform: rotate(12deg);
-            pointer-events: none;
-        }
-
-        .project-logo-frame .project-logo {
-            position: relative;
-            z-index: 1;
-            display: block;
-            width: min(100%, 205px);
-            height: 155px;
-            object-fit: contain;
-            padding: 10px;
-            background: #fff;
-            border: 3px solid #171717;
-            border-radius: 17px 12px 18px 11px;
-            box-shadow: 4px 4px 0 #171717;
-            transform: rotate(1deg);
-        }
-
-        .project-logo-frame .art-label {
-            position: relative;
-            z-index: 1;
-            display: inline-block;
-            max-width: 90%;
-            margin: 0;
-            padding: 5px 12px;
-            color: #171717;
-            background: #fff;
-            border: 2.5px solid #171717;
-            border-radius: 9px 6px 10px 7px;
-            box-shadow: 2px 2px 0 #171717;
-            text-align: center;
-            font-family: "Bungee", sans-serif;
-            font-size: 10px;
-            letter-spacing: 0.5px;
-            transform: rotate(-1deg);
-        }
-
-        .project-illustration.vox-art {
-            background-color: #b8f1ff;
-            transform: rotate(-0.8deg);
-        }
-        .project-illustration.vox-art::after { color: #087eaa; }
-
-        .project-illustration.scholar-art {
-            background-color: #ffe39a;
-            transform: rotate(0.6deg);
-        }
-        .project-illustration.scholar-art::after {
-            content: "★";
-            color: #e49b00;
-            font-size: 32px;
-        }
-        .project-logo-frame.scholar-art .project-logo {
-            width: min(100%, 275px);
-            height: 185px;
-            padding: 8px;
-            border-width: 4px;
-            box-shadow: 5px 5px 0 #171717;
-            transform: rotate(-0.5deg);
-        }
-
-        .project-illustration.parking-art {
-            background-color: #c9f5c6;
-            transform: rotate(-0.4deg);
-        }
-        .project-illustration.parking-art::after { color: #278b35; }
-
-        /* PROFILE PHOTO: comic-book portrait frame */
-        .hero-art .profile-photo-frame {
-            position: relative;
-            z-index: 2;
-            width: min(78%, 330px);
-            min-height: 360px;
-            margin: 12px auto 18px;
-            padding: 13px;
-            background: #fffdf5;
-            border: 5px solid #171717;
-            border-radius: 34px 22px 38px 20px;
-            box-shadow: 10px 10px 0 #171717, 15px 15px 0 #f6c84b;
-            transform: rotate(2deg);
-        }
-
-        .hero-art .profile-photo-frame::before {
-            content: "";
-            position: absolute;
-            inset: 7px;
-            border: 2px dashed #171717;
-            border-radius: 24px 15px 28px 14px;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .hero-art .profile-photo-frame::after {
-            content: "✦";
-            position: absolute;
-            z-index: 3;
-            top: -22px;
-            right: -19px;
-            display: grid;
-            place-items: center;
-            width: 58px;
-            height: 58px;
-            color: #171717;
-            background: #ffdc55;
-            border: 4px solid #171717;
-            border-radius: 50%;
-            box-shadow: 3px 3px 0 #171717;
-            font-size: 31px;
-            transform: rotate(12deg);
-        }
-
-        .hero-art .profile-photo {
-            display: block;
-            width: 100%;
-            height: 315px;
-            object-fit: cover;
-            object-position: center;
-            border: 3px solid #171717;
-            border-radius: 23px 14px 25px 13px;
-            background: #dff5ff;
-        }
-
-        .hero-art .profile-photo-caption {
-            position: relative;
-            z-index: 3;
-            width: fit-content;
-            max-width: 90%;
-            margin: 12px auto 0;
-            padding: 7px 15px;
-            color: #171717;
-            background: #ffdc55;
-            border: 3px solid #171717;
-            border-radius: 8px 5px 10px 6px;
-            box-shadow: 3px 3px 0 #171717;
-            font-family: "Bungee", sans-serif;
-            font-size: 11px;
-            text-align: center;
-            transform: rotate(-2deg);
-        }
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 16px;
-            color: #171717;
-            background: #fffdf5;
-            border: 3px solid #171717;
-            border-radius: 10px 7px 12px 8px;
-            box-shadow: 3px 3px 0 #171717;
-            font-weight: 800;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .social-links a:hover {
-            transform: translate(-2px, -2px) rotate(-1deg);
-            box-shadow: 5px 5px 0 #171717;
-        }
-
-        @media (max-width: 600px) {
-            .hero-art .profile-photo-frame {
-                width: min(82%, 285px);
-                min-height: 305px;
-                padding: 10px;
-                box-shadow: 7px 7px 0 #171717, 11px 11px 0 #f6c84b;
-            }
-            .hero-art .profile-photo { height: 260px; }
-            .hero-art .profile-photo-caption { font-size: 9px; }
-        }
-
-        /* HERO STICKERS: keep the two comic labels comfortably separated */
-        .hero-art {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            padding: 38px 16px 34px;
-        }
-
-        .hero-art .hero-sticker {
-            position: relative;
-            inset: auto;
-            display: inline-block;
-            z-index: 4;
-            margin: 0;
-            flex: 0 0 auto;
-        }
-
-        .hero-art .sticker-top {
-            align-self: flex-start;
-            margin-left: 4%;
-            transform: rotate(-4deg);
-        }
-
-        .hero-art .sticker-bottom {
-            align-self: flex-end;
-            margin-right: 2%;
-            transform: rotate(3deg);
-        }
-
-        .hero-art .profile-photo-frame {
-            margin: 0 auto;
-            flex: 0 0 auto;
-        }
-
-        @media (max-width: 600px) {
-            .hero-art {
-                gap: 19px;
-                padding: 32px 12px 28px;
-            }
-            .hero-art .sticker-top { margin-left: 1%; }
-            .hero-art .sticker-bottom { margin-right: 0; }
-            .project-illustration.project-logo-frame {
-                min-height: 205px;
-                padding: 22px 16px 17px;
-                border-width: 4px;
-                box-shadow: 5px 5px 0 #171717;
-            }
-            .project-logo-frame .project-logo {
-                height: 135px;
-                width: min(100%, 190px);
-            }
-            .project-logo-frame.scholar-art .project-logo {
-                height: 160px;
-                width: min(100%, 240px);
-            }
-            .project-logo-frame .art-label { font-size: 9px; }
-        }
-
-
-        /* SKILLS: organized category cards, matching the portfolio style */
-        .skills-categories {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
-            align-items: stretch;
-        }
-        .skills-category {
-            position: relative;
-            padding: 22px;
-            background: #fffdf5;
-            color: #171717;
-            border: 3px solid #171717;
-            border-radius: 22px 15px 24px 16px;
-            box-shadow: 6px 6px 0 #171717;
-            overflow: hidden;
-        }
-        .skills-category:first-child { grid-column: 1 / -1; }
-        .skills-category::after {
-            content: "";
-            position: absolute;
-            inset: 7px;
-            border: 1.5px dashed rgba(23,23,23,.24);
-            border-radius: 15px 10px 17px 11px;
-            pointer-events: none;
-        }
-        .skills-category-heading {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            margin-bottom: 18px;
-        }
-        .skills-category-icon {
-            display: grid;
-            place-items: center;
-            flex: 0 0 43px;
-            width: 43px;
-            height: 43px;
-            color: #171717;
-            background: #ffdc55;
-            border: 2.5px solid #171717;
-            border-radius: 13px 9px 14px 8px;
-            box-shadow: 3px 3px 0 #171717;
-            font-family: "Bungee", sans-serif;
-            font-size: 19px;
-        }
-        .languages-category .skills-category-icon { background: #b8eaff; }
-        .soft-category .skills-category-icon { background: #c9f5c6; }
-        .skills-category-kicker {
-            display: block;
-            margin-bottom: 3px;
-            font-family: "Bungee", sans-serif;
-            font-size: 9px;
-            letter-spacing: .7px;
-            color: #666;
-        }
-        .skills-category-heading h3 {
-            margin: 0;
-            font-family: "Bungee", sans-serif;
-            font-size: 17px;
-            line-height: 1.25;
-        }
-        .skills-pills {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-        }
-        .skills-pills span {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 11px;
-            background: #fff;
-            border: 2px solid #171717;
-            border-radius: 10px 7px 11px 8px;
-            box-shadow: 2px 2px 0 #171717;
-            font-family: "DM Sans", sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        .skills-pills small {
-            padding-left: 6px;
-            border-left: 1px solid #aaa;
-            color: #666;
-            font-size: 10px;
-            font-weight: 600;
-        }
-        @media (max-width: 700px) {
-            .skills-categories { grid-template-columns: 1fr; }
-            .skills-category:first-child { grid-column: auto; }
-            .skills-category { padding: 19px 16px; }
-            .skills-pills { gap: 8px; }
-            .skills-pills span { font-size: 11px; padding: 7px 9px; }
-        }
-/* SKILLS: organized category cards */
 .skills-categories {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    align-items: stretch;
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 18px;
+align-items: stretch;
 }
-
 .skills-category {
-    position: relative;
-    padding: 22px;
-    background: #fffaf0;
-    color: #171717;
-    border: 3px solid #171717;
-    border-radius: 22px 15px 24px 16px;
-    box-shadow: 6px 6px 0 #171717;
-    overflow: hidden;
+position: relative;
+padding: 22px;
+background: #fffaf0;
+color: #171717;
+border: 3px solid #171717;
+border-radius: 22px 15px 24px 16px;
+box-shadow: 6px 6px 0 #171717;
+overflow: hidden;
 }
-
-.skills-category:first-child {
-    grid-column: 1 / -1;
-}
-
+.skills-category:first-child { grid-column: 1 / -1; }
 .skills-category::after {
-    content: "";
-    position: absolute;
-    inset: 7px;
-    border: 1.5px dashed rgba(23,23,23,.24);
-    border-radius: 15px 10px 17px 11px;
-    pointer-events: none;
+content: "";
+position: absolute;
+inset: 7px;
+border: 1.5px dashed rgba(23,23,23,.24);
+border-radius: 15px 10px 17px 11px;
+pointer-events: none;
 }
-
 .skills-category-heading {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin-bottom: 18px;
+position: relative;
+z-index: 1;
+display: flex;
+align-items: center;
+gap: 13px;
+margin-bottom: 18px;
 }
-
 .skills-category-icon {
-    display: grid;
-    place-items: center;
-    flex: 0 0 43px;
-    width: 43px;
-    height: 43px;
-    color: #171717;
-    background: #f6c84b;
-    border: 2.5px solid #171717;
-    border-radius: 13px 9px 14px 8px;
-    box-shadow: 3px 3px 0 #171717;
-    font-family: "Bungee", sans-serif;
-    font-size: 19px;
+display: grid;
+place-items: center;
+flex: 0 0 43px;
+width: 43px;
+height: 43px;
+color: #171717;
+background: #f6c84b;
+border: 2.5px solid #171717;
+border-radius: 13px 9px 14px 8px;
+box-shadow: 3px 3px 0 #171717;
+font-family: "Bungee", sans-serif;
+font-size: 19px;
 }
-
 .skills-category-kicker {
-    display: block;
-    margin-bottom: 3px;
-    font-family: "Bungee", sans-serif;
-    font-size: 9px;
-    letter-spacing: .7px;
-    color: #666;
+display: block;
+margin-bottom: 3px;
+font-family: "Bungee", sans-serif;
+font-size: 9px;
+letter-spacing: .7px;
+color: #666;
 }
-
 .skills-category-heading h3 {
-    margin: 0;
-    font-family: "Bungee", sans-serif;
-    font-size: 17px;
-    line-height: 1.25;
+margin: 0;
+font-family: "Bungee", sans-serif;
+font-size: 17px;
+line-height: 1.25;
 }
-
 .skills-pills {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
+position: relative;
+z-index: 1;
+display: flex;
+flex-wrap: wrap;
+gap: 9px;
 }
-
 .skills-pills span {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 11px;
-    background: #fffdf7;
-    border: 2px solid #171717;
-    border-radius: 10px 7px 11px 8px;
-    box-shadow: 2px 2px 0 #171717;
-    font-family: "DM Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.2;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 8px 11px;
+background: #fffdf7;
+border: 2px solid #171717;
+border-radius: 10px 7px 11px 8px;
+box-shadow: 2px 2px 0 #171717;
+font-family: "DM Sans", sans-serif;
+font-size: 12px;
+font-weight: 700;
+line-height: 1.2;
 }
-
 .skills-pills small {
-    padding-left: 6px;
-    border-left: 1px solid #aaa;
-    color: #666;
-    font-size: 10px;
-    font-weight: 600;
+padding-left: 6px;
+border-left: 1px solid #aaa;
+color: #666;
+font-size: 10px;
+font-weight: 600;
 }
-
 @media (max-width: 700px) {
-    .skills-categories {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-category:first-child {
-        grid-column: auto;
-    }
-
-    .skills-category {
-        padding: 19px 16px;
-    }
-
-    .skills-pills {
-        gap: 8px;
-    }
-
-    .skills-pills span {
-        font-size: 11px;
-        padding: 7px 9px;
-    }
+.skills-categories { grid-template-columns: 1fr; }
+.skills-category:first-child { grid-column: auto; }
+.skills-category { padding: 19px 16px; }
+.skills-pills { gap: 8px; }
+.skills-pills span { font-size: 11px; padding: 7px 9px; }
 }
-    
 
-/* Center ONLY the Parking-SV card; leave VoxVision and ScholarNet unchanged */
+/* Parking-SV centered, without changing the other project cards */
 .project-grid > .parking-centered {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc((100% - 24px) / 2);
+grid-column: 1 / -1;
+justify-self: center;
+width: calc((100% - 24px) / 2);
+}
+@media (max-width: 700px) {
+.project-grid > .parking-centered {
+grid-column: 1 / -1;
+width: 100%;
+}
 }
 
+/* Cartoon language switch */
+.language-toggle {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+flex: 0 0 auto;
+padding: 9px 15px;
+color: #171717;
+background: #ffdc55;
+border: 3px solid #171717;
+border-radius: 11px 7px 13px 8px;
+box-shadow: 3px 3px 0 #171717;
+font-family: "Bungee", sans-serif;
+font-size: 12px;
+cursor: pointer;
+transition: transform .2s ease, box-shadow .2s ease;
+}
+.language-toggle:hover {
+transform: translate(-2px, -2px) rotate(-2deg);
+box-shadow: 5px 5px 0 #171717;
+}
+.language-toggle:active {
+transform: translate(2px, 2px);
+box-shadow: 1px 1px 0 #171717;
+}
+.language-toggle-icon { font-size: 16px; line-height: 1; }
 @media (max-width: 700px) {
-    .project-grid > .parking-centered {
-        grid-column: 1 / -1;
-        width: 100%;
-    }
+.navbar { flex-wrap: wrap; }
+.language-toggle { margin-left: auto; }
 }
 </style>
 </head>
-
 <body>
 
-    <!-- CUSTOM CARTOON CURSOR -->
-    <div class="cartoon-cursor" id="cartoonCursor">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M21 29V11C21 6 29 6 29 11V26V8C29 3 37 3 37 8V26V12C37 7 45 7 45 12V29V20C45 15 53 15 53 20V39C53 52 44 60 32 60H28C20 60 16 54 12 48L5 38C2 33 8 28 12 32L21 42Z"
-                fill="#fff" stroke="#111" stroke-width="3.5"
-                stroke-linejoin="round"/>
-        </svg>
-    </div>
-
-    <!-- INTRO SCREEN -->
-    <div class="intro-screen" id="introScreen">
-
-        <div class="intro-content">
-
-            <p class="intro-label">A NEW ADVENTURE AWAITS</p>
-
-            <div class="intro-decoration">
-                <span class="star">✦</span>
-                <span class="intro-line"></span>
-                <span class="star">✦</span>
-            </div>
-
-            <h1 class="intro-title">
-                THE PORTFOLIO<br>
-                <span>ADVENTURE</span>
-            </h1>
-
-            <p class="intro-subtitle">
-                A little world of ideas, creativity, and code.
-            </p>
-
-            <div class="intro-character">
-                <div class="character-head">
-                    <div class="character-eye left-eye"></div>
-                    <div class="character-eye right-eye"></div>
-                    <div class="character-smile"></div>
-                </div>
-                <div class="character-body"></div>
-            </div>
-
-            <button class="start-button" id="startButton" type="button">
-                <span>➜</span> ENTER PORTFOLIO
-            </button>
-
-            <p class="intro-footer">
-                YOUR JOURNEY STARTS HERE
-            </p>
-
-        </div>
-
-        <div class="intro-bottom">
-            <span>PLAYER 01</span>
-            <span>READY TO EXPLORE?</span>
-        </div>
-
-    </div>
-
-    <!-- MAIN PORTFOLIO -->
-    <main id="portfolio" class="portfolio hidden">
-
-        <!-- NAVIGATION -->
-        <nav class="navbar">
-            <a href="#inicio" class="logo">FA<span>.</span></a>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
-                ☰
-            </button>
-
-            <div class="nav-links" id="navLinks">
-                <a href="#inicio">Home</a>
-                <a href="#sobre-mi">About</a>
-                <a href="#proyectos">Projects</a>
-                <a href="#habilidades">Skills</a>
-                <a href="#logros">Experience</a>
-                <a href="#contacto" class="nav-contact">Contact</a>
-            </div>
-        </nav>
-
-        <!-- HERO -->
-        <section class="hero section" id="inicio">
-
-            <div class="hero-text reveal">
-                <p class="eyebrow">HELLO, WORLD! I'M</p>
-
-                <h1>
-                    FREDY<br>
-                    <span>AGUILAR</span>
-                </h1>
-
-                <h2>Student · Aspiring Software Engineer</h2>
-
-                <p class="hero-description">
-                    I am a high school student passionate about technology,
-                    programming, and creating digital solutions that can
-                    make a difference.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#proyectos" class="button primary-button">
-                        Explore my work ↗
-                    </a>
-
-                    <a href="#contacto" class="button secondary-button">
-                        Get in touch
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-art reveal">
-                <div class="hero-circle"></div>
-
-                <div class="hero-sticker sticker-top">CREATIVE MIND!</div>
-
-                <div class="profile-photo-frame">
-                    <!-- Add your portrait as images/fredy-profile.jpg -->
-                    <img
-                        class="profile-photo"
-                        src="fredy-profile.png"
-                        alt="Portrait of Fredy Aguilar"
-                    >
-                    <p class="profile-photo-caption">THE PERSON BEHIND THE CODE</p>
-                </div>
-
-                <div class="hero-sticker sticker-bottom">
-                    LET'S BUILD SOMETHING!
-                </div>
-            </div>
-
-            <div class="hero-bottom">
-                <span>SCROLL TO EXPLORE</span>
-                <span>↓</span>
-            </div>
-
-        </section>
-
-        <!-- ABOUT -->
-        <section class="about section" id="sobre-mi">
-
-            <div class="section-heading reveal">
-                <p class="eyebrow">THE PERSON BEHIND THE SCREEN</p>
-                <h2>ABOUT <span>ME</span></h2>
-            </div>
-
-            <div class="about-layout">
-
-                <div class="about-card about-main reveal">
-                    <span class="card-number">01 / MY STORY</span>
-
-                    <h3>A curious mind with big ideas.</h3>
-
-                    <p>
-                        My name is Fredy Samuel Aguilar Ayala. I am a
-                        17-year-old high school student from El Salvador,
-                        currently studying General High School and
-                        participating in the ¡Supérate! ADOC program.
-                    </p>
-
-                    <p>
-                        My interest in technology started with curiosity.
-                        I wanted to understand how applications, websites,
-                        and computer systems work. That curiosity gradually
-                        became a motivation to learn programming and
-                        develop my own projects.
-                    </p>
-
-                    <p>
-                        I want to study Computer Systems Engineering and
-                        continue growing as a person and as a future
-                        professional. I believe technology is more than
-                        writing code: it is a way to turn ideas into
-                        solutions that can help others.
-                    </p>
-                </div>
-
-                <div class="about-side reveal">
-                    <div class="quote-card">
-                        <span class="quote-mark">“</span>
-                        <h3>Think it.<br>Build it.<br>Improve it.</h3>
-                        <p>Every great project begins with an idea.</p>
-                    </div>
-
-                    <div class="about-info">
-                        <p><span>LOCATION</span> El Salvador</p>
-                        <p><span>EDUCATION</span> General High School</p>
-                        <p><span>GOAL</span> Computer Systems Engineering</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section class="projects section" id="proyectos">
-
-            <div class="section-heading reveal">
-                <p class="eyebrow">SOME THINGS I'VE BEEN WORKING ON</p>
-                <h2>MY <span>PROJECTS</span></h2>
-                <p class="section-description">
-                    Ideas, experiments, and projects built through curiosity
-                    and continuous learning.
-                </p>
-            </div>
-
-            <div class="project-grid">
-
-                <!-- PROJECT 01: VOXVISION -->
-                <article class="project-card project-featured reveal">
-
-                    <div class="project-top">
-                        <span>01 — SOCIAL IMPACT</span>
-                        <span class="project-symbol">◉</span>
-                    </div>
-
-                    <div class="project-illustration project-logo-frame vox-art">
-                        <!-- Upload the VoxVision logo to images/logos/voxvision-logo.png -->
-                        <img
-                            class="project-logo"
-                            src="voxvision-logo.png"
-                            alt="VoxVision project logo"
-                        >
-                        <span class="art-label">VISION FOR EVERYONE</span>
-                    </div>
-
-                    <div class="project-content">
-                        <h3>VoxVision</h3>
-
-                        <p>
-                            VoxVision is a web-based accessibility project
-                            that uses artificial intelligence to detect
-                            objects. Its object detection model was trained
-                            using Teachable Machine and integrated into the
-                            website to explore how technology can help people
-                            with visual impairments understand their
-                            surroundings.
-                        </p>
-
-                        <div class="tech-tags">
-                            <span>Teachable Machine</span>
-                            <span>AI Object Detection</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-
-                        <div class="project-actions">
-                            <a
-                                href="https://fredy-8.github.io/VoxVision/"
-                                class="project-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                VIEW WEBSITE ↗
-                            </a>
-
-                            <a
-                                href="https://github.com/Fredy-8/VoxVision"
-                                class="project-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                VIEW REPO ↗
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJECT 02: SCHOLARNET -->
-                <article class="project-card reveal">
-
-                    <div class="project-top">
-                        <span>02 — TEAM PROJECT · EDUCATION</span>
-                        <span class="project-symbol">✦</span>
-                    </div>
-
-                    <div class="project-illustration project-logo-frame scholar-art">
-                        <!-- Upload the ScholarNet logo to images/logos/scholarnet-logo.png -->
-                        <img
-                            class="project-logo"
-                            src="scholarnet-logo.png"
-                            alt="ScholarNet project logo"
-                        >
-                        <span class="art-label">EXPLORE · APPLY · GROW</span>
-                    </div>
-
-                    <div class="project-content">
-                        <h3>ScholarNet</h3>
-
-                        <p>
-                            ScholarNet started as an idea for a mobile
-                            application designed to help young Salvadorans
-                            discover scholarship opportunities and access
-                            educational resources. We initially developed
-                            the mobile app using Python, Kivy, and MySQL.
-                            Later, as a team, we transformed that original
-                            idea into a website using HTML, CSS, and
-                            JavaScript, keeping the same purpose while
-                            making the platform accessible through a browser.
-                        </p>
-
-                        <div class="tech-tags">
-                            <span>Python</span>
-                            <span>Kivy</span>
-                            <span>MySQL</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Teamwork</span>
-                        </div>
-
-                        <div class="project-actions">
-
-                            <a
-                                href="https://scholarnet-web.github.io/ScholarnetSV-Web/"
-                                class="project-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                VIEW WEBSITE ↗
-                            </a>
-
-                            <a
-                                href="https://github.com/Scholarnet-Web/ScholarnetSV-Web"
-                                class="project-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                VIEW WEBSITE REPO ↗
-                            </a>
-
-                            <a
-                                href="https://github.com/Fredy-8/Scholarnet"
-                                class="project-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                VIEW MOBILE APP REPO ↗
-                            </a>
-
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJECT 03: PARKING-SV -->
-                <article class="project-card reveal parking-centered">
-
-                    <div class="project-top">
-                        <span>03 — EVERYDAY SOLUTIONS</span>
-                        <span class="project-symbol">⌖</span>
-                    </div>
-
-                    <div class="project-illustration project-logo-frame parking-art">
-                        <!-- Upload the Parking-SV logo to images/logos/parking-sv-logo.png -->
-                        <img
-                            class="project-logo"
-                            src="parkingsv-logo.png"
-                            alt="Parking-SV project logo"
-                        >
-                        <span class="art-label">PARK SMARTER</span>
-                    </div>
-
-                    <div class="project-content">
-                        <h3>Parking-SV</h3>
-
-                        <p>
-                            A digital platform concept that connects
-                            drivers looking for parking spaces with
-                            people who have available parking areas.
-                            The project explores a more accessible way
-                            to find and offer parking spaces.
-                        </p>
-
-                        <div class="tech-tags">
-                            <span>Python</span>
-                            <span>Toga</span>
-                            <span>HTML & CSS</span>
-                            <span>Web Development</span>
-                        </div>
-
-                        <div class="project-actions">
-                            <a
-                                href="https://parkingsv.vercel.app/"
-                                class="project-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live demo ↗
-                            </a>
-
-                            <a
-                                href="https://github.com/parkingSV26/parkingsv-web"
-                                class="project-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Source code ↗
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- SCHOLARNET MOBILE APP MODAL -->
-        <dialog class="scholar-modal" id="scholarModal">
-
-            <div class="scholar-modal-content">
-
-                <div class="scholar-modal-header">
-                    <div>
-                        <p class="eyebrow">ORIGINAL MOBILE APPLICATION</p>
-                        <h2>Scholar<span>Net</span></h2>
-                    </div>
-
-                    <button
-                        type="button"
-                        class="scholar-modal-close"
-                        id="closeScholarModal"
-                        aria-label="Close window"
-                    >
-                        ×
-                    </button>
-                </div>
-
-                <div class="scholar-modal-intro">
-
-                    <img
-                        src="assets/scholarnet/logo.png"
-                        alt="ScholarNet application logo"
-                        class="scholar-modal-logo"
-                    >
-
-                    <div>
-                        <span class="scholar-team-label">
-                            COLLABORATIVE TEAM PROJECT
-                        </span>
-
-                        <p>
-                            ScholarNet was originally developed as a
-                            mobile application using Python and Kivy,
-                            with MySQL integration. The project was
-                            created collaboratively to help young
-                            Salvadorans explore scholarship opportunities.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="scholar-modal-section">
-                    <h3>Inside the mobile application</h3>
-
-                    <p>
-                        The original application includes several
-                        sections designed to help users navigate
-                        scholarship information and educational resources.
-                    </p>
-
-                    <div class="scholar-screen-grid">
-
-                        <div class="scholar-screen-item">
-                            <span>01</span>
-                            <h4>Splash Screen</h4>
-                            <p>Welcome screen and application identity.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>02</span>
-                            <h4>Login</h4>
-                            <p>User sign-in interface.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>03</span>
-                            <h4>Registration</h4>
-                            <p>Account creation interface.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>04</span>
-                            <h4>User Menu</h4>
-                            <p>Main navigation after signing in.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>05</span>
-                            <h4>Scholarship Selection</h4>
-                            <p>Access to scholarship categories.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>06</span>
-                            <h4>National Scholarships</h4>
-                            <p>Information about local opportunities.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>07</span>
-                            <h4>International Scholarships</h4>
-                            <p>Information about opportunities abroad.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>08</span>
-                            <h4>News</h4>
-                            <p>Educational news and scholarship updates.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>09</span>
-                            <h4>Experiences</h4>
-                            <p>Stories and experiences from students.</p>
-                        </div>
-
-                        <div class="scholar-screen-item">
-                            <span>10</span>
-                            <h4>About Us & Contact</h4>
-                            <p>Information about the project and contact section.</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="scholar-modal-tech">
-                    <h3>Technologies used</h3>
-
-                    <div class="tech-tags">
-                        <span>Python</span>
-                        <span>Kivy</span>
-                        <span>MySQL</span>
-                    </div>
-                </div>
-
-                <div class="scholar-modal-footer">
-                    <a
-                        href="https://fredy-8.github.io/Scholarnet-Web/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="button primary-button"
-                    >
-                        Explore web version ↗
-                    </a>
-
-                    <button
-                        type="button"
-                        class="button secondary-button"
-                        id="closeScholarModalBottom"
-                    >
-                        Close
-                    </button>
-                </div>
-
-                <p class="scholar-modal-note">
-                    This presentation describes the original mobile
-                    application. Screenshots can be added to this section
-                    to show the actual interface.
-                </p>
-
-            </div>
-        </dialog>
-
-        <!-- SKILLS -->
-<section class="skills section" id="habilidades">
-
-    <div class="section-heading reveal">
-        <p class="eyebrow">TOOLS I AM LEARNING TO MASTER</p>
-        <h2>MY <span>SKILLS</span></h2>
-    </div>
-
-    <div class="skills-layout">
-
-        <div class="skills-intro reveal">
-            <h3>Learning never stops.</h3>
-            <p>
-                I am continuously developing my technical and
-                communication skills through school, personal
-                projects, and new challenges.
-            </p>
-        </div>
-
-        <div class="skills-list reveal skills-categories">
-
-            <!-- TECHNICAL SKILLS -->
-            <div class="skills-category technical-category">
-
-                <div class="skills-category-heading">
-                    <span class="skills-category-icon">⌘</span>
-
-                    <div>
-                        <span class="skills-category-kicker">
-                            01 — TECHNOLOGY
-                        </span>
-                        <h3>Technical Skills</h3>
-                    </div>
-                </div>
-
-                <div class="skills-pills">
-                    <span>Python</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>MySQL</span>
-                    <span>Kivy</span>
-                    <span>Toga</span>
-                    <span>Git &amp; GitHub</span>
-                    <span>Database Management</span>
-                    <span>Responsive Web Design</span>
-                    <span>UI Design</span>
-                </div>
-
-            </div>
-
-            <!-- LANGUAGES -->
-            <div class="skills-category languages-category">
-
-                <div class="skills-category-heading">
-                    <span class="skills-category-icon">文</span>
-
-                    <div>
-                        <span class="skills-category-kicker">
-                            02 — COMMUNICATION
-                        </span>
-                        <h3>Languages</h3>
-                    </div>
-                </div>
-
-                <div class="skills-pills">
-                    <span>Spanish <small>Native</small></span>
-                    <span>English <small>B1–B2</small></span>
-                </div>
-
-            </div>
-
-            <!-- SOFT SKILLS -->
-            <div class="skills-category soft-category">
-
-                <div class="skills-category-heading">
-                    <span class="skills-category-icon">✦</span>
-
-                    <div>
-                        <span class="skills-category-kicker">
-                            03 — PERSONAL GROWTH
-                        </span>
-                        <h3>Soft Skills</h3>
-                    </div>
-                </div>
-
-                <div class="skills-pills">
-                    <span>Problem Solving</span>
-                    <span>Critical Thinking</span>
-                    <span>Teamwork</span>
-                    <span>Communication</span>
-                    <span>Public Speaking</span>
-                    <span>Adaptability</span>
-                    <span>Leadership</span>
-                    <span>Creativity</span>
-                    <span>Continuous Learning</span>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
+<div class="cartoon-cursor" id="cartoonCursor">
+<svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M21 29V11C21 6 29 6 29 11V26V8C21 3 37 3 37 8V26V12C37 7 45 7 45 12V29V20C45 15 53 15 53 20V39C53 52 44 60 32 60H28C20 60 16 54 12 48L5 38C2 33 8 28 12 32L21 42Z"
+fill="#fff" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+</svg>
+</div>
+
+<div class="intro-screen" id="introScreen">
+<div class="intro-content">
+<p class="intro-label">A NEW ADVENTURE AWAITS</p>
+<div class="intro-decoration">
+<span class="star">✦</span>
+<span class="intro-line"></span>
+<span class="star">✦</span>
+</div>
+<h1 class="intro-title">THE PORTFOLIO<br><span>ADVENTURE</span></h1>
+<p class="intro-subtitle">A little world of ideas, creativity, and code.</p>
+<div class="intro-character">
+<div class="character-head">
+<div class="character-eye left-eye"></div>
+<div class="character-eye right-eye"></div>
+<div class="character-smile"></div>
+</div>
+<div class="character-body"></div>
+</div>
+<button class="start-button" id="startButton" type="button"><span>➜</span> ENTER PORTFOLIO</button>
+<p class="intro-footer">YOUR JOURNEY STARTS HERE</p>
+</div>
+<div class="intro-bottom">
+<span>PLAYER 01</span>
+<span>READY TO EXPLORE?</span>
+</div>
+</div>
+
+<main id="portfolio" class="portfolio hidden">
+<nav class="navbar">
+<a href="#inicio" class="logo">FA<span>.</span></a>
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+<button class="language-toggle" id="languageToggle" type="button" aria-label="Change language" aria-pressed="false">
+<span class="language-toggle-icon">文</span>
+<span id="languageLabel">ES</span>
+</button>
+<div class="nav-links" id="navLinks">
+<a href="#inicio">Home</a>
+<a href="#sobre-mi">About</a>
+<a href="#proyectos">Projects</a>
+<a href="#habilidades">Skills</a>
+<a href="#logros">Experience</a>
+<a href="#contacto" class="nav-contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero section" id="inicio">
+<div class="hero-text reveal">
+<p class="eyebrow">HELLO, WORLD! I'M</p>
+<h1>FREDY<br><span>AGUILAR</span></h1>
+<h2>Student · Aspiring Software Engineer</h2>
+<p class="hero-description">I am a high school student passionate about technology, programming, and creating digital solutions that can make a difference.</p>
+<div class="hero-buttons">
+<a href="#proyectos" class="button primary-button">Explore my work ↗</a>
+<a href="#contacto" class="button secondary-button">Get in touch</a>
+</div>
+</div>
+<div class="hero-art reveal">
+<div class="hero-circle"></div>
+<div class="hero-sticker sticker-top">CREATIVE MIND!</div>
+<div class="profile-photo-frame">
+<img class="profile-photo" src="fredy-profile.png" alt="Portrait of Fredy Aguilar">
+<p class="profile-photo-caption">THE PERSON BEHIND THE CODE</p>
+</div>
+<div class="hero-sticker sticker-bottom">LET'S BUILD SOMETHING!</div>
+</div>
+<div class="hero-bottom">
+<span>SCROLL TO EXPLORE</span>
+<span>↓</span>
+</div>
 </section>
-        <!-- EXPERIENCE -->
-        <section class="experience section" id="logros">
 
-            <div class="section-heading reveal">
-                <p class="eyebrow">MILESTONES ALONG THE WAY</p>
-                <h2>MY <span>JOURNEY</span></h2>
-            </div>
+<section class="about section" id="sobre-mi">
+<div class="section-heading reveal">
+<p class="eyebrow">THE PERSON BEHIND THE SCREEN</p>
+<h2>ABOUT <span>ME</span></h2>
+</div>
+<div class="about-layout">
+<div class="about-card about-main reveal">
+<span class="card-number">01 / MY STORY</span>
+<h3>A curious mind with big ideas.</h3>
+<p>My name is Fredy Samuel Aguilar Ayala. I am a 17-year-old high school student from El Salvador, currently studying General High School and participating in the ¡Supérate! ADOC program.</p>
+<p>My interest in technology started with curiosity. I wanted to understand how applications, websites, and computer systems work. That curiosity gradually became a motivation to learn programming and develop my own projects.</p>
+<p>I want to study Computer Systems Engineering and continue growing as a person and as a future professional. I believe technology is more than writing code: it is a way to turn ideas into solutions that can help others.</p>
+</div>
+<div class="about-side reveal">
+<div class="quote-card">
+<span class="quote-mark">“</span>
+<h3>Think it.<br>Build it.<br>Improve it.</h3>
+<p>Every great project begins with an idea.</p>
+</div>
+<div class="about-info">
+<p><span>LOCATION</span> El Salvador</p>
+<p><span>EDUCATION</span> General High School</p>
+<p><span>GOAL</span> Computer Systems Engineering</p>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="timeline">
+<section class="projects section" id="proyectos">
+<div class="section-heading reveal">
+<p class="eyebrow">SOME THINGS I'VE BEEN WORKING ON</p>
+<h2>MY <span>PROJECTS</span></h2>
+<p class="section-description">Ideas, experiments, and projects built through curiosity and continuous learning.</p>
+</div>
+<div class="project-grid">
 
-                <div class="timeline-item reveal">
-                    <div class="timeline-marker">01</div>
-                    <div class="timeline-content">
-                        <span>EDUCATION</span>
-                        <h3>¡Supérate! ADOC</h3>
-                        <p>
-                            Scholarship student developing skills in
-                            computing, English, and values.
-                        </p>
-                    </div>
-                </div>
+<article class="project-card project-featured reveal">
+<div class="project-top">
+<span>01 — SOCIAL IMPACT</span>
+<span class="project-symbol">◉</span>
+</div>
+<div class="project-illustration project-logo-frame vox-art">
+<img class="project-logo" src="voxvision-logo.png" alt="VoxVision project logo">
+<span class="art-label">VISION FOR EVERYONE</span>
+</div>
+<div class="project-content">
+<h3>VoxVision</h3>
+<p>VoxVision is a web-based accessibility project that uses artificial intelligence to detect objects. Its object detection model was trained using Teachable Machine and integrated into the website to explore how technology can help people with visual impairments understand their surroundings.</p>
+<div class="tech-tags">
+<span>Teachable Machine</span>
+<span>AI Object Detection</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+</div>
+<div class="project-actions">
+<a href="https://fredy-8.github.io/VoxVision/" class="project-link" target="_blank" rel="noopener noreferrer">VIEW WEBSITE ↗</a>
+<a href="https://github.com/Fredy-8/VoxVision" class="project-link" target="_blank" rel="noopener noreferrer">VIEW REPO ↗</a>
+</div>
+</div>
+</article>
 
-                <div class="timeline-item reveal">
-                    <div class="timeline-marker">02</div>
-                    <div class="timeline-content">
-                        <span>ENGLISH</span>
-                        <h3>TOEIC</h3>
-                        <p>
-                            English learning and assessment experience,
-                            with a TOEIC Silver achievement.
-                        </p>
-                    </div>
-                </div>
+<article class="project-card reveal">
+<div class="project-top">
+<span>02 — TEAM PROJECT · EDUCATION</span>
+<span class="project-symbol">✦</span>
+</div>
+<div class="project-illustration project-logo-frame scholar-art">
+<img class="project-logo" src="scholarnet-logo.png" alt="ScholarNet project logo">
+<span class="art-label">EXPLORE · APPLY · GROW</span>
+</div>
+<div class="project-content">
+<h3>ScholarNet</h3>
+<p>ScholarNet started as an idea for a mobile application designed to help young Salvadorans discover scholarship opportunities and access educational resources. We initially developed the mobile app using Python, Kivy, and MySQL. Later, as a team, we transformed that original idea into a website using HTML, CSS, and JavaScript, keeping the same purpose while making the platform accessible through a browser.</p>
+<div class="tech-tags">
+<span>Python</span>
+<span>Kivy</span>
+<span>MySQL</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Teamwork</span>
+</div>
+<div class="project-actions">
+<a href="https://scholarnet-web.github.io/ScholarnetSV-Web/" class="project-link" target="_blank" rel="noopener noreferrer">VIEW WEBSITE ↗</a>
+<a href="https://github.com/Scholarnet-Web/ScholarnetSV-Web" class="project-link" target="_blank" rel="noopener noreferrer">VIEW WEBSITE REPO ↗</a>
+<a href="https://github.com/Fredy-8/Scholarnet" class="project-link" target="_blank" rel="noopener noreferrer">VIEW MOBILE APP REPO ↗</a>
+</div>
+</div>
+</article>
 
-                <div class="timeline-item reveal">
-                    <div class="timeline-marker">03</div>
-                    <div class="timeline-content">
-                        <span>EXPERIENCE</span>
-                        <h3>Space Camp</h3>
-                        <p>
-                            An educational experience that helped me
-                            explore science, teamwork, and new challenges.
-                        </p>
-                    </div>
-                </div>
+<article class="project-card reveal parking-centered">
+<div class="project-top">
+<span>03 — EVERYDAY SOLUTIONS</span>
+<span class="project-symbol">⌖</span>
+</div>
+<div class="project-illustration project-logo-frame parking-art">
+<img class="project-logo" src="parkingsv-logo.png" alt="Parking-SV project logo">
+<span class="art-label">PARK SMARTER</span>
+</div>
+<div class="project-content">
+<h3>Parking-SV</h3>
+<p>A digital platform concept that connects drivers looking for parking spaces with people who have available parking areas. The project explores a more accessible way to find and offer parking spaces.</p>
+<div class="tech-tags">
+<span>Python</span>
+<span>Toga</span>
+<span>HTML & CSS</span>
+<span>Web Development</span>
+</div>
+<div class="project-actions">
+<a href="https://parkingsv.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+<a href="https://github.com/parkingSV26/parkingsv-web" class="project-link" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+</div>
+</div>
+</article>
+</div>
+</section>
 
-                <div class="timeline-item reveal">
-                    <div class="timeline-marker">04</div>
-                    <div class="timeline-content">
-                        <span>PERSONAL GROWTH</span>
-                        <h3>Building My Own Projects</h3>
-                        <p>
-                            Exploring programming and turning ideas into
-                            digital project concepts.
-                        </p>
-                    </div>
-                </div>
+<dialog class="scholar-modal" id="scholarModal">
+<div class="scholar-modal-content">
+<div class="scholar-modal-header">
+<div>
+<p class="eyebrow">ORIGINAL MOBILE APPLICATION</p>
+<h2>Scholar<span>Net</span></h2>
+</div>
+<button type="button" class="scholar-modal-close" id="closeScholarModal" aria-label="Close window">×</button>
+</div>
+<div class="scholar-modal-intro">
+<img src="assets/scholarnet/logo.png" alt="ScholarNet application logo" class="scholar-modal-logo">
+<div>
+<span class="scholar-team-label">COLLABORATIVE TEAM PROJECT</span>
+<p>ScholarNet was originally developed as a mobile application using Python and Kivy, with MySQL integration. The project was created collaboratively to help young Salvadorans explore scholarship opportunities.</p>
+</div>
+</div>
+<div class="scholar-modal-section">
+<h3>Inside the mobile application</h3>
+<p>The original application includes several sections designed to help users navigate scholarship information and educational resources.</p>
+<div class="scholar-screen-grid">
+<div class="scholar-screen-item"><span>01</span><h4>Splash Screen</h4><p>Welcome screen and application identity.</p></div>
+<div class="scholar-screen-item"><span>02</span><h4>Login</h4><p>User sign-in interface.</p></div>
+<div class="scholar-screen-item"><span>03</span><h4>Registration</h4><p>Account creation interface.</p></div>
+<div class="scholar-screen-item"><span>04</span><h4>User Menu</h4><p>Main navigation after signing in.</p></div>
+<div class="scholar-screen-item"><span>05</span><h4>Scholarship Selection</h4><p>Access to scholarship categories.</p></div>
+<div class="scholar-screen-item"><span>06</span><h4>National Scholarships</h4><p>Information about local opportunities.</p></div>
+<div class="scholar-screen-item"><span>07</span><h4>International Scholarships</h4><p>Information about opportunities abroad.</p></div>
+<div class="scholar-screen-item"><span>08</span><h4>News</h4><p>Educational news and scholarship updates.</p></div>
+<div class="scholar-screen-item"><span>09</span><h4>Experiences</h4><p>Stories and experiences from students.</p></div>
+<div class="scholar-screen-item"><span>10</span><h4>About Us & Contact</h4><p>Information about the project and contact section.</p></div>
+</div>
+</div>
+<div class="scholar-modal-tech">
+<h3>Technologies used</h3>
+<div class="tech-tags">
+<span>Python</span>
+<span>Kivy</span>
+<span>MySQL</span>
+</div>
+</div>
+<div class="scholar-modal-footer">
+<a href="https://fredy-8.github.io/Scholarnet-Web/" target="_blank" rel="noopener noreferrer" class="button primary-button">Explore web version ↗</a>
+<button type="button" class="button secondary-button" id="closeScholarModalBottom">Close</button>
+</div>
+<p class="scholar-modal-note">This presentation describes the original mobile application. Screenshots can be added to this section to show the actual interface.</p>
+</div>
+</dialog>
 
-            </div>
-        </section>
+<section class="skills section" id="habilidades">
+<div class="section-heading reveal">
+<p class="eyebrow">TOOLS I AM LEARNING TO MASTER</p>
+<h2>MY <span>SKILLS</span></h2>
+</div>
+<div class="skills-layout">
+<div class="skills-intro reveal">
+<h3>Learning never stops.</h3>
+<p>I am continuously developing my technical and communication skills through school, personal projects, and new challenges.</p>
+</div>
+<div class="skills-list reveal skills-categories">
 
-        <!-- CONTACT -->
-        <section class="contact section" id="contacto">
+<div class="skills-category technical-category">
+<div class="skills-category-heading">
+<span class="skills-category-icon">⌘</span>
+<div>
+<span class="skills-category-kicker">01 — TECHNOLOGY</span>
+<h3>Technical Skills</h3>
+</div>
+</div>
+<div class="skills-pills">
+<span>Python</span>
+<span>HTML5</span>
+<span>CSS3</span>
+<span>JavaScript</span>
+<span>MySQL</span>
+<span>Kivy</span>
+<span>Toga</span>
+<span>Git &amp; GitHub</span>
+<span>Database Management</span>
+<span>Responsive Web Design</span>
+<span>UI Design</span>
+</div>
+</div>
 
-            <div class="contact-card reveal">
+<div class="skills-category languages-category">
+<div class="skills-category-heading">
+<span class="skills-category-icon">文</span>
+<div>
+<span class="skills-category-kicker">02 — COMMUNICATION</span>
+<h3>Languages</h3>
+</div>
+</div>
+<div class="skills-pills">
+<span>Spanish <small>Native</small></span>
+<span>English <small>B1–B2</small></span>
+</div>
+</div>
 
-                <p class="eyebrow">THE NEXT CHAPTER STARTS HERE</p>
+<div class="skills-category soft-category">
+<div class="skills-category-heading">
+<span class="skills-category-icon">✦</span>
+<div>
+<span class="skills-category-kicker">03 — PERSONAL GROWTH</span>
+<h3>Soft Skills</h3>
+</div>
+</div>
+<div class="skills-pills">
+<span>Problem Solving</span>
+<span>Critical Thinking</span>
+<span>Teamwork</span>
+<span>Communication</span>
+<span>Public Speaking</span>
+<span>Adaptability</span>
+<span>Leadership</span>
+<span>Creativity</span>
+<span>Continuous Learning</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-                <h2>LET'S MAKE<br><span>IDEAS HAPPEN.</span></h2>
+<section class="experience section" id="logros">
+<div class="section-heading reveal">
+<p class="eyebrow">MILESTONES ALONG THE WAY</p>
+<h2>MY <span>JOURNEY</span></h2>
+</div>
+<div class="timeline">
 
-                <p>
-                    Have a project, an opportunity, or just want to say hello?
-                    I would be happy to connect.
-                </p>
+<div class="timeline-item reveal">
+<div class="timeline-marker">01</div>
+<div class="timeline-content">
+<span>EDUCATION</span>
+<h3>¡Supérate! ADOC</h3>
+<p>Scholarship student developing skills in computing, English, and values.</p>
+</div>
+</div>
 
-                <a href="mailto:samuelaguilar1227@gmail.com" class="button primary-button">
-                    Email me ↗
-                </a>
+<div class="timeline-item reveal">
+<div class="timeline-marker">02</div>
+<div class="timeline-content">
+<span>ENGLISH</span>
+<h3>TOEIC</h3>
+<p>I have completed three TOEIC certifications, achieving good results and continuing to strengthen my English skills.</p>
+</div>
+</div>
 
-                <div class="social-links">
-                    <a href="https://github.com/Fredy-8" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    <a href="https://www.linkedin.com/in/fredy-aguilar8" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                </div>
+<div class="timeline-item reveal">
+<div class="timeline-marker">03</div>
+<div class="timeline-content">
+<span>EXPERIENCE</span>
+<h3>Space Camp</h3>
+<p>An educational experience that helped me explore science, teamwork, and new challenges.</p>
+</div>
+</div>
 
-            </div>
-        </section>
+<div class="timeline-item reveal">
+<div class="timeline-marker">04</div>
+<div class="timeline-content">
+<span>PERSONAL GROWTH</span>
+<h3>Building My Own Projects</h3>
+<p>Exploring programming and turning ideas into digital project concepts.</p>
+</div>
+</div>
+</div>
+</section>
 
-        <!-- FOOTER -->
-        <footer class="footer">
-            <p>© <span id="year"></span> Fredy Aguilar. All rights reserved.</p>
-            <p>MADE WITH CURIOSITY & A LITTLE BIT OF MAGIC ✦</p>
-        </footer>
+<section class="contact section" id="contacto">
+<div class="contact-card reveal">
+<p class="eyebrow">THE NEXT CHAPTER STARTS HERE</p>
+<h2>LET'S MAKE<br><span>IDEAS HAPPEN.</span></h2>
+<p>Have a project, an opportunity, or just want to say hello? I would be happy to connect.</p>
+<a href="mailto:samuelaguilar1227@gmail.com" class="button primary-button">Email me ↗</a>
+<div class="social-links">
+<a href="https://github.com/Fredy-8" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+<a href="https://www.linkedin.com/in/fredy-aguilar8" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+</div>
+</div>
+</section>
 
-    </main>
+<footer class="footer">
+<p>© <span id="year"></span> Fredy Aguilar. All rights reserved.</p>
+<p>MADE WITH CURIOSITY & A LITTLE BIT OF MAGIC ✦</p>
+</footer>
+</main>
 
-    <!-- SCHOLARNET MODAL INTERACTION -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+const scholarModal = document.getElementById("scholarModal");
+const openScholarModal = document.getElementById("openScholarModal");
+const closeScholarModal = document.getElementById("closeScholarModal");
+const closeScholarModalBottom = document.getElementById("closeScholarModalBottom");
 
-            const scholarModal = document.getElementById("scholarModal");
+if (scholarModal && openScholarModal) {
+openScholarModal.addEventListener("click", () => scholarModal.showModal());
+closeScholarModal.addEventListener("click", () => scholarModal.close());
+closeScholarModalBottom.addEventListener("click", () => scholarModal.close());
 
-            const openScholarModal =
-                document.getElementById("openScholarModal");
+scholarModal.addEventListener("click", (event) => {
+if (event.target === scholarModal) scholarModal.close();
+});
+}
+});
+</script>
 
-            const closeScholarModal =
-                document.getElementById("closeScholarModal");
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+const languageToggle = document.getElementById("languageToggle");
+const languageLabel = document.getElementById("languageLabel");
+if (!languageToggle || !languageLabel) return;
 
-            const closeScholarModalBottom =
-                document.getElementById("closeScholarModalBottom");
+const translations = {
+en: {
+".intro-label": "A NEW ADVENTURE AWAITS",
+".intro-title": "THE PORTFOLIO<br><span>ADVENTURE</span>",
+".hero-art .sticker-top": "CREATIVE MIND!",
+".hero-art .sticker-bottom": "LET'S BUILD SOMETHING!",
+".intro-subtitle": "A little world of ideas, creativity, and code.",
+"#startButton": "<span>➜</span> ENTER PORTFOLIO",
+".intro-footer": "YOUR JOURNEY STARTS HERE",
+".intro-bottom span:first-child": "PLAYER 01",
+".intro-bottom span:last-child": "READY TO EXPLORE?",
+".nav-links a:nth-child(1)": "Home",
+".nav-links a:nth-child(2)": "About",
+".nav-links a:nth-child(3)": "Projects",
+".nav-links a:nth-child(4)": "Skills",
+".nav-links a:nth-child(5)": "Experience",
+".nav-links a:nth-child(6)": "Contact",
+".hero-text .eyebrow": "HELLO, WORLD! I'M",
+".hero-text h2": "Student · Aspiring Software Engineer",
+".hero-description": "I am a high school student passionate about technology, programming, and creating digital solutions that can make a difference.",
+".hero-buttons .primary-button": "Explore my work ↗",
+".hero-buttons .secondary-button": "Get in touch",
+".profile-photo-caption": "THE PERSON BEHIND THE CODE",
+".hero-bottom span:first-child": "SCROLL TO EXPLORE",
+".about .section-heading .eyebrow": "THE PERSON BEHIND THE SCREEN",
+".about .section-heading h2": "ABOUT <span>ME</span>",
+".about-main .card-number": "01 / MY STORY",
+".about-main h3": "A curious mind with big ideas.",
+".about-main p:nth-of-type(1)": "My name is Fredy Samuel Aguilar Ayala. I am a 17-year-old high school student from El Salvador, currently studying General High School and participating in the ¡Supérate! ADOC program.",
+".about-main p:nth-of-type(2)": "My interest in technology started with curiosity. I wanted to understand how applications, websites, and computer systems work. That curiosity gradually became a motivation to learn programming and develop my own projects.",
+".about-main p:nth-of-type(3)": "I want to study Computer Systems Engineering and continue growing as a person and as a future professional. I believe technology is more than writing code: it is a way to turn ideas into solutions that can help others.",
+".quote-card h3": "Think it.<br>Build it.<br>Improve it.",
+".quote-card p": "Every great project begins with an idea.",
+".about-info p:nth-child(1)": "<span>LOCATION</span> El Salvador",
+".about-info p:nth-child(2)": "<span>EDUCATION</span> General High School",
+".about-info p:nth-child(3)": "<span>GOAL</span> Computer Systems Engineering",
+".projects .section-heading .eyebrow": "SOME THINGS I'VE BEEN WORKING ON",
+".projects .section-heading h2": "MY <span>PROJECTS</span>",
+".projects .section-description": "Ideas, experiments, and projects built through curiosity and continuous learning.",
+".project-featured .project-content p": "VoxVision is a web-based accessibility project that uses artificial intelligence to detect objects. Its object detection model was trained using Teachable Machine and integrated into the website to explore how technology can help people with visual impairments understand their surroundings.",
+".project-featured .project-actions a:nth-child(1)": "VIEW WEBSITE ↗",
+".project-featured .project-actions a:nth-child(2)": "VIEW REPO ↗",
+".project-grid > article:nth-child(2) .project-content p": "ScholarNet started as an idea for a mobile application designed to help young Salvadorans discover scholarship opportunities and access educational resources. We initially developed the mobile app using Python, Kivy, and MySQL. Later, as a team, we transformed that original idea into a website using HTML, CSS, and JavaScript, keeping the same purpose while making the platform accessible through a browser.",
+".project-grid > article:nth-child(2) .project-actions a:nth-child(1)": "VIEW WEBSITE ↗",
+".project-grid > article:nth-child(2) .project-actions a:nth-child(2)": "VIEW WEBSITE REPO ↗",
+".project-grid > article:nth-child(2) .project-actions a:nth-child(3)": "VIEW MOBILE APP REPO ↗",
+".parking-centered .project-content p": "A digital platform concept that connects drivers looking for parking spaces with people who have available parking areas. The project explores a more accessible way to find and offer parking spaces.",
+".parking-centered .project-actions a:nth-child(1)": "Live demo ↗",
+".parking-centered .project-actions a:nth-child(2)": "Source code ↗",
+".scholar-modal-header .eyebrow": "ORIGINAL MOBILE APPLICATION",
+".scholar-team-label": "COLLABORATIVE TEAM PROJECT",
+".scholar-modal-intro p": "ScholarNet was originally developed as a mobile application using Python and Kivy, with MySQL integration. The project was created collaboratively to help young Salvadorans explore scholarship opportunities.",
+".scholar-modal-section h3": "Inside the mobile application",
+".scholar-modal-section > p": "The original application includes several sections designed to help users navigate scholarship information and educational resources.",
+".scholar-screen-item:nth-child(1) p": "Welcome screen and application identity.",
+".scholar-screen-item:nth-child(2) p": "User sign-in interface.",
+".scholar-screen-item:nth-child(3) p": "Account creation interface.",
+".scholar-screen-item:nth-child(4) p": "Main navigation after signing in.",
+".scholar-screen-item:nth-child(5) p": "Access to scholarship categories.",
+".scholar-screen-item:nth-child(6) p": "Information about local opportunities.",
+".scholar-screen-item:nth-child(7) p": "Information about opportunities abroad.",
+".scholar-screen-item:nth-child(8) p": "Educational news and scholarship updates.",
+".scholar-screen-item:nth-child(9) p": "Stories and experiences from students.",
+".scholar-screen-item:nth-child(10) p": "Information about the project and contact section.",
+".scholar-modal-tech h3": "Technologies used",
+".scholar-modal-footer .primary-button": "Explore web version ↗",
+"#closeScholarModalBottom": "Close",
+".scholar-modal-note": "This presentation describes the original mobile application. Screenshots can be added to this section to show the actual interface.",
+".skills .section-heading .eyebrow": "TOOLS I AM LEARNING TO MASTER",
+".skills .section-heading h2": "MY <span>SKILLS</span>",
+".skills-intro h3": "Learning never stops.",
+".skills-intro p": "I am continuously developing my technical and communication skills through school, personal projects, and new challenges.",
+".technical-category .skills-category-kicker": "01 — TECHNOLOGY",
+".technical-category h3": "Technical Skills",
+".languages-category .skills-category-kicker": "02 — COMMUNICATION",
+".languages-category h3": "Languages",
+".soft-category .skills-category-kicker": "03 — PERSONAL GROWTH",
+".soft-category h3": "Soft Skills",
+".experience .section-heading .eyebrow": "MILESTONES ALONG THE WAY",
+".experience .section-heading h2": "MY <span>JOURNEY</span>",
+".timeline-item:nth-child(1) .timeline-content > span": "EDUCATION",
+".timeline-item:nth-child(1) .timeline-content p": "Scholarship student developing skills in computing, English, and values.",
+".timeline-item:nth-child(2) .timeline-content > span": "ENGLISH",
+".timeline-item:nth-child(2) .timeline-content p": "I have completed three TOEIC certifications, achieving good results and continuing to strengthen my English skills.",
+".timeline-item:nth-child(3) .timeline-content > span": "EXPERIENCE",
+".timeline-item:nth-child(3) .timeline-content p": "An educational experience that helped me explore science, teamwork, and new challenges.",
+".timeline-item:nth-child(4) .timeline-content > span": "PERSONAL GROWTH",
+".timeline-item:nth-child(4) .timeline-content p": "Exploring programming and turning ideas into digital project concepts.",
+".contact-card .eyebrow": "THE NEXT CHAPTER STARTS HERE",
+".contact-card h2": "LET'S MAKE<br><span>IDEAS HAPPEN.</span>",
+".contact-card > p:not(.eyebrow)": "Have a project, an opportunity, or just want to say hello? I would be happy to connect.",
+".contact-card > .primary-button": "Email me ↗",
+".footer p:last-child": "MADE WITH CURIOSITY & A LITTLE BIT OF MAGIC ✦"
+},
+es: {
+".intro-label": "UNA NUEVA AVENTURA TE ESPERA",
+".intro-title": "EL PORTAFOLIO<br><span>AVENTURA</span>",
+".hero-art .sticker-top": "¡MENTE CREATIVA!",
+".hero-art .sticker-bottom": "¡CONSTRUYAMOS ALGO!",
+".intro-subtitle": "Un pequeño mundo de ideas, creatividad y código.",
+"#startButton": "<span>➜</span> ENTRAR AL PORTAFOLIO",
+".intro-footer": "TU HISTORIA COMIENZA AQUÍ",
+".intro-bottom span:first-child": "JUGADOR 01",
+".intro-bottom span:last-child": "¿LISTO PARA EXPLORAR?",
+".nav-links a:nth-child(1)": "Inicio",
+".nav-links a:nth-child(2)": "Sobre mí",
+".nav-links a:nth-child(3)": "Proyectos",
+".nav-links a:nth-child(4)": "Habilidades",
+".nav-links a:nth-child(5)": "Experiencia",
+".nav-links a:nth-child(6)": "Contacto",
+".hero-text .eyebrow": "¡HOLA, MUNDO! SOY",
+".hero-text h2": "Estudiante · Futuro ingeniero de software",
+".hero-description": "Soy un estudiante de bachillerato apasionado por la tecnología, la programación y la creación de soluciones digitales que puedan marcar la diferencia.",
+".hero-buttons .primary-button": "Explora mis proyectos ↗",
+".hero-buttons .secondary-button": "Ponte en contacto",
+".profile-photo-caption": "LA PERSONA DETRÁS DEL CÓDIGO",
+".hero-bottom span:first-child": "DESLIZA PARA EXPLORAR",
+".about .section-heading .eyebrow": "LA PERSONA DETRÁS DE LA PANTALLA",
+".about .section-heading h2": "SOBRE <span>MÍ</span>",
+".about-main .card-number": "01 / MI HISTORIA",
+".about-main h3": "Una mente curiosa con grandes ideas.",
+".about-main p:nth-of-type(1)": "Mi nombre es Fredy Samuel Aguilar Ayala. Soy un estudiante de bachillerato de 17 años, originario de El Salvador. Actualmente curso Bachillerato General y formo parte del programa ¡Supérate! ADOC.",
+".about-main p:nth-of-type(2)": "Mi interés por la tecnología comenzó con la curiosidad. Quería comprender cómo funcionan las aplicaciones, los sitios web y los sistemas informáticos. Poco a poco, esa curiosidad se convirtió en una motivación para aprender programación y desarrollar mis propios proyectos.",
+".about-main p:nth-of-type(3)": "Quiero estudiar Ingeniería en Sistemas Informáticos y continuar creciendo como persona y como futuro profesional. Creo que la tecnología es mucho más que escribir código: es una forma de convertir ideas en soluciones que pueden ayudar a los demás.",
+".quote-card h3": "Imagínalo.<br>Constrúyelo.<br>Mejóralo.",
+".quote-card p": "Todo gran proyecto comienza con una idea.",
+".about-info p:nth-child(1)": "<span>UBICACIÓN</span> El Salvador",
+".about-info p:nth-child(2)": "<span>EDUCACIÓN</span> Bachillerato General",
+".about-info p:nth-child(3)": "<span>META</span> Ingeniería en Sistemas Informáticos",
+".projects .section-heading .eyebrow": "ALGUNOS PROYECTOS EN LOS QUE HE TRABAJADO",
+".projects .section-heading h2": "MIS <span>PROYECTOS</span>",
+".projects .section-description": "Ideas, experimentos y proyectos que nacen de la curiosidad y el aprendizaje continuo.",
+".project-featured .project-content p": "VoxVision es un proyecto web de accesibilidad que utiliza inteligencia artificial para detectar objetos. Su modelo de detección fue entrenado con Teachable Machine e integrado en el sitio web para explorar cómo la tecnología puede ayudar a las personas con discapacidad visual a comprender su entorno.",
+".project-featured .project-actions a:nth-child(1)": "VER SITIO WEB ↗",
+".project-featured .project-actions a:nth-child(2)": "VER REPOSITORIO ↗",
+".project-grid > article:nth-child(2) .project-content p": "ScholarNet comenzó como una idea de aplicación móvil diseñada para ayudar a jóvenes salvadoreños a descubrir oportunidades de becas y acceder a recursos educativos. Inicialmente desarrollamos la aplicación con Python, Kivy y MySQL. Más adelante, como equipo, transformamos esa idea en un sitio web utilizando HTML, CSS y JavaScript, conservando su propósito y permitiendo acceder a la plataforma desde un navegador.",
+".project-grid > article:nth-child(2) .project-actions a:nth-child(1)": "VER SITIO WEB ↗",
+".project-grid > article:nth-child(2) .project-actions a:nth-child(2)": "VER REPOSITORIO WEB ↗",
+".project-grid > article:nth-child(2) .project-actions a:nth-child(3)": "VER REPOSITORIO DE LA APP ↗",
+".parking-centered .project-content p": "Un concepto de plataforma digital que conecta a conductores que buscan estacionamiento con personas que tienen espacios disponibles. El proyecto explora una forma más accesible de encontrar y ofrecer espacios para estacionar.",
+".parking-centered .project-actions a:nth-child(1)": "DEMO EN VIVO ↗",
+".parking-centered .project-actions a:nth-child(2)": "CÓDIGO FUENTE ↗",
+".scholar-modal-header .eyebrow": "APLICACIÓN MÓVIL ORIGINAL",
+".scholar-team-label": "PROYECTO COLABORATIVO EN EQUIPO",
+".scholar-modal-intro p": "ScholarNet fue desarrollado originalmente como una aplicación móvil utilizando Python y Kivy, con integración de MySQL. El proyecto se creó en equipo para ayudar a jóvenes salvadoreños a explorar oportunidades de becas.",
+".scholar-modal-section h3": "Dentro de la aplicación móvil",
+".scholar-modal-section > p": "La aplicación original incluye varias secciones diseñadas para ayudar a los usuarios a explorar información sobre becas y recursos educativos.",
+".scholar-screen-item:nth-child(1) p": "Pantalla de bienvenida e identidad de la aplicación.",
+".scholar-screen-item:nth-child(2) p": "Interfaz para iniciar sesión.",
+".scholar-screen-item:nth-child(3) p": "Interfaz para crear una cuenta.",
+".scholar-screen-item:nth-child(4) p": "Navegación principal después de iniciar sesión.",
+".scholar-screen-item:nth-child(5) p": "Acceso a las categorías de becas.",
+".scholar-screen-item:nth-child(6) p": "Información sobre oportunidades nacionales.",
+".scholar-screen-item:nth-child(7) p": "Información sobre oportunidades en el extranjero.",
+".scholar-screen-item:nth-child(8) p": "Noticias educativas y actualizaciones sobre becas.",
+".scholar-screen-item:nth-child(9) p": "Historias y experiencias de estudiantes.",
+".scholar-screen-item:nth-child(10) p": "Información del proyecto y sección de contacto.",
+".scholar-modal-tech h3": "Tecnologías utilizadas",
+".scholar-modal-footer .primary-button": "Explorar versión web ↗",
+"#closeScholarModalBottom": "Cerrar",
+".scholar-modal-note": "Esta presentación describe la aplicación móvil original. En esta sección se pueden agregar capturas de pantalla para mostrar la interfaz real.",
+".skills .section-heading .eyebrow": "HERRAMIENTAS QUE ESTOY APRENDIENDO A DOMINAR",
+".skills .section-heading h2": "MIS <span>HABILIDADES</span>",
+".skills-intro h3": "El aprendizaje nunca termina.",
+".skills-intro p": "Continúo desarrollando mis habilidades técnicas y de comunicación a través del instituto, proyectos personales y nuevos desafíos.",
+".technical-category .skills-category-kicker": "01 — TECNOLOGÍA",
+".technical-category h3": "Habilidades técnicas",
+".languages-category .skills-category-kicker": "02 — COMUNICACIÓN",
+".languages-category h3": "Idiomas",
+".soft-category .skills-category-kicker": "03 — CRECIMIENTO PERSONAL",
+".soft-category h3": "Habilidades blandas",
+".experience .section-heading .eyebrow": "LOGROS A LO LARGO DEL CAMINO",
+".experience .section-heading h2": "MI <span>TRAYECTORIA</span>",
+".timeline-item:nth-child(1) .timeline-content > span": "EDUCACIÓN",
+".timeline-item:nth-child(1) .timeline-content p": "Estudiante becado que desarrolla habilidades en informática, inglés y valores.",
+".timeline-item:nth-child(2) .timeline-content > span": "INGLÉS",
+".timeline-item:nth-child(2) .timeline-content p": "He completado tres certificaciones TOEIC, obteniendo buenos resultados y fortaleciendo continuamente mis habilidades en inglés.",
+".timeline-item:nth-child(3) .timeline-content > span": "EXPERIENCIA",
+".timeline-item:nth-child(3) .timeline-content p": "Una experiencia educativa que me permitió explorar la ciencia, el trabajo en equipo y nuevos desafíos.",
+".timeline-item:nth-child(4) .timeline-content > span": "CRECIMIENTO PERSONAL",
+".timeline-item:nth-child(4) .timeline-content p": "Explorando la programación y convirtiendo ideas en conceptos de proyectos digitales.",
+".contact-card .eyebrow": "EL SIGUIENTE CAPÍTULO COMIENZA AQUÍ",
+".contact-card h2": "HAGAMOS QUE<br><span>LAS IDEAS SUCEDAN.</span>",
+".contact-card > p:not(.eyebrow)": "¿Tienes un proyecto, una oportunidad o simplemente quieres saludar? Me encantaría conectar contigo.",
+".contact-card > .primary-button": "Escríbeme ↗",
+".footer p:last-child": "HECHO CON CURIOSIDAD Y UN POQUITO DE MAGIA ✦"
+}
+};
 
-            if (scholarModal && openScholarModal) {
+const extraTranslations = {
+en: {
+".vox-art .art-label": "VISION FOR EVERYONE",
+".scholar-art .art-label": "EXPLORE · APPLY · GROW",
+".parking-art .art-label": "PARK SMARTER"
+},
+es: {
+".vox-art .art-label": "VISIÓN PARA TODOS",
+".scholar-art .art-label": "EXPLORA · POSTULA · CRECE",
+".parking-art .art-label": "ESTACIONA MEJOR"
+}
+};
 
-                openScholarModal.addEventListener("click", () => {
-                    scholarModal.showModal();
-                });
+function setLanguage(language) {
+const dictionary = translations[language];
 
-                closeScholarModal.addEventListener("click", () => {
-                    scholarModal.close();
-                });
+Object.entries(dictionary).forEach(([selector, value]) => {
+const element = document.querySelector(selector);
+if (element && value !== "") element.innerHTML = value;
+});
 
-                closeScholarModalBottom.addEventListener("click", () => {
-                    scholarModal.close();
-                });
+Object.entries(extraTranslations[language]).forEach(([selector, value]) => {
+const element = document.querySelector(selector);
+if (element) element.innerHTML = value;
+});
 
-                scholarModal.addEventListener("click", (event) => {
-                    if (event.target === scholarModal) {
-                        scholarModal.close();
-                    }
-                });
+const projectTopLabels = document.querySelectorAll(".project-top span:first-child");
+const projectLabels = language === "es"
+? ["01 — IMPACTO SOCIAL", "02 — PROYECTO EN EQUIPO · EDUCACIÓN", "03 — SOLUCIONES COTIDIANAS"]
+: ["01 — SOCIAL IMPACT", "02 — TEAM PROJECT · EDUCATION", "03 — EVERYDAY SOLUTIONS"];
 
-            }
+projectTopLabels.forEach((element, index) => {
+if (projectLabels[index]) element.textContent = projectLabels[index];
+});
 
-        });
-    </script>
+const skills = document.querySelectorAll(".skills-pills span");
 
-    <script src="script.js"></script>
+if (language === "es") {
+const skillNames = [
+"Python", "HTML5", "CSS3", "JavaScript", "MySQL", "Kivy", "Toga",
+"Git & GitHub", "Gestión de bases de datos", "Diseño web adaptable",
+"Diseño de interfaces", "Español", "Inglés", "Resolución de problemas",
+"Pensamiento crítico", "Trabajo en equipo", "Comunicación",
+"Hablar en público", "Adaptabilidad", "Liderazgo", "Creatividad",
+"Aprendizaje continuo"
+];
 
+skills.forEach((element, index) => {
+if (index === 11) element.innerHTML = "Español <small>Nativo</small>";
+else if (index === 12) element.innerHTML = "Inglés <small>B1–B2</small>";
+else if (skillNames[index]) element.textContent = skillNames[index];
+});
+} else {
+const skillNames = [
+"Python", "HTML5", "CSS3", "JavaScript", "MySQL", "Kivy", "Toga",
+"Git & GitHub", "Database Management", "Responsive Web Design",
+"UI Design", "Spanish", "English", "Problem Solving",
+"Critical Thinking", "Teamwork", "Communication", "Public Speaking",
+"Adaptability", "Leadership", "Creativity", "Continuous Learning"
+];
+
+skills.forEach((element, index) => {
+if (index === 11) element.innerHTML = "Spanish <small>Native</small>";
+else if (index === 12) element.innerHTML = "English <small>B1–B2</small>";
+else if (skillNames[index]) element.textContent = skillNames[index];
+});
+}
+
+const screenTitles = document.querySelectorAll(".scholar-screen-item h4");
+const screenTitlesES = [
+"Pantalla de bienvenida", "Inicio de sesión", "Registro", "Menú de usuario",
+"Selección de becas", "Becas nacionales", "Becas internacionales",
+"Noticias", "Experiencias", "Sobre nosotros y contacto"
+];
+const screenTitlesEN = [
+"Splash Screen", "Login", "Registration", "User Menu",
+"Scholarship Selection", "National Scholarships",
+"International Scholarships", "News", "Experiences", "About Us & Contact"
+];
+
+screenTitles.forEach((element, index) => {
+element.textContent = language === "es" ? screenTitlesES[index] : screenTitlesEN[index];
+});
+
+const portrait = document.querySelector(".profile-photo");
+if (portrait) {
+portrait.alt = language === "es" ? "Retrato de Fredy Aguilar" : "Portrait of Fredy Aguilar";
+}
+
+document.documentElement.lang = language;
+languageLabel.textContent = language === "en" ? "ES" : "EN";
+
+const menuToggle = document.getElementById("menuToggle");
+if (menuToggle) {
+menuToggle.setAttribute("aria-label", language === "es" ? "Abrir navegación" : "Open navigation");
+}
+
+const closeModal = document.getElementById("closeScholarModal");
+if (closeModal) {
+closeModal.setAttribute("aria-label", language === "es" ? "Cerrar ventana" : "Close window");
+}
+
+languageToggle.setAttribute("aria-pressed", language === "es" ? "true" : "false");
+languageToggle.setAttribute("aria-label", language === "en" ? "Cambiar a español" : "Switch to English");
+
+document.title = language === "es"
+? "Fredy Aguilar | Portafolio digital"
+: "Fredy Aguilar | Digital Portfolio";
+
+try {
+localStorage.setItem("portfolio-language", language);
+} catch (error) {}
+}
+
+let currentLanguage = "en";
+
+try {
+const savedLanguage = localStorage.getItem("portfolio-language");
+if (savedLanguage === "es" || savedLanguage === "en") {
+currentLanguage = savedLanguage;
+}
+} catch (error) {}
+
+setLanguage(currentLanguage);
+
+languageToggle.addEventListener("click", () => {
+currentLanguage = currentLanguage === "en" ? "es" : "en";
+setLanguage(currentLanguage);
+});
+});
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>
